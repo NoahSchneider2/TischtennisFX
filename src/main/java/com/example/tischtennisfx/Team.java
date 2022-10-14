@@ -1,6 +1,10 @@
 package com.example.tischtennisfx;
 
-public class team {
+public class Team {
+
+    Team(String teamName) {
+        setName(teamName);
+    }
 
     private String name;
 
@@ -18,7 +22,7 @@ public class team {
         return points;
     }
 
-    public void addOnePoint() {
+    public void addWonMatch() {
         this.points++;
     }
 }
