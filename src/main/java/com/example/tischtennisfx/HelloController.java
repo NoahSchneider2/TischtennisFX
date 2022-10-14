@@ -14,8 +14,9 @@ public class HelloController {
     private ArrayList<String> membersOfTeamOne = new ArrayList<>();
     private ArrayList<String> membersOfTeamTwo = new ArrayList<>();
 
-    private ArrayList<String> d1t1List = new ArrayList<>();
-    private ArrayList<String> d1t2List = new ArrayList<>();
+    private ArrayList<Participant> doppelTeamOne = new ArrayList<>();
+
+    private ArrayList<Participant> doppelTeamTwo = new ArrayList<>();
     private String nameOfTeamOne;
     private String nameOfTeamTwo;
 
@@ -87,10 +88,6 @@ public class HelloController {
 
     @FXML
     void tunierstartButton(ActionEvent event) {
-        d1t1List.add(t1d1.getValue().toString());
-        d1t1List.add(t1d2.getValue().toString());
 
-        d1t2List.add(t2d1.getValue().toString());
-        d1t2List.add(t2d2.getValue().toString());
     }
 }
