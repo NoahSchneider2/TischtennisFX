@@ -4,23 +4,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import java.util.List; // Package for the list
+
 import java.util.ArrayList; // Package for the ArrayList
 import javafx.collections.ObservableList; // Package for the ObservableList
-import javafx.collections.ListChangeListener; // Package for the listener for lists
 import javafx.collections.FXCollections;
-
-import java.util.ArrayList;
 
 public class HelloController {
 
-    private ArrayList<String> t1NList = new ArrayList<>();
-    private ArrayList<String> t2NList = new ArrayList<>();
+    private ArrayList<String> membersOfTeamOne = new ArrayList<>();
+    private ArrayList<String> membersOfTeamTwo = new ArrayList<>();
 
     private ArrayList<String> d1t1List = new ArrayList<>();
     private ArrayList<String> d1t2List = new ArrayList<>();
-    private String t1Name;
-    private String t2Name;
+    private String nameOfTeamOne;
+    private String nameOfTeamTwo;
 
 
     @FXML
@@ -67,21 +64,21 @@ public class HelloController {
 
     @FXML
     void doppelButton(ActionEvent event) {
-        t1Name = t1N.getText();
-        t2Name = t2N.getText();
+        nameOfTeamOne = t1N.getText();
+        nameOfTeamTwo = t2N.getText();
 
-        t1NList.add(T1S1N.getText());
-        t1NList.add(T1S2N.getText());
-        t1NList.add(T1S3N.getText());
-        t1NList.add(T1S4N.getText());
+        membersOfTeamOne.add(T1S1N.getText());
+        membersOfTeamOne.add(T1S2N.getText());
+        membersOfTeamOne.add(T1S3N.getText());
+        membersOfTeamOne.add(T1S4N.getText());
 
-        t2NList.add(T2S1N.getText());
-        t2NList.add(T2S2N.getText());
-        t2NList.add(T2S3N.getText());
-        t2NList.add(T2S4N.getText());
+        membersOfTeamTwo.add(T2S1N.getText());
+        membersOfTeamTwo.add(T2S2N.getText());
+        membersOfTeamTwo.add(T2S3N.getText());
+        membersOfTeamTwo.add(T2S4N.getText());
 
-        ObservableList t1nOb = FXCollections.observableList(t1NList);
-        ObservableList t2nOb = FXCollections.observableList(t2NList);
+        ObservableList t1nOb = FXCollections.observableList(membersOfTeamOne);
+        ObservableList t2nOb = FXCollections.observableList(membersOfTeamTwo);
         t1d1.setItems(t1nOb);
         t1d2.setItems(t1nOb);
         t2d1.setItems(t2nOb);
