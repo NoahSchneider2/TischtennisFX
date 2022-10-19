@@ -51,19 +51,19 @@ public class HelloController {
     private TextField t1N;
 
     @FXML
-    private ChoiceBox<?> t1d1;
+    private ChoiceBox<?> t1ds1;
 
     @FXML
-    private ChoiceBox<?> t1d2;
+    private ChoiceBox<?> t1ds2;
 
     @FXML
-    private ChoiceBox<?> t2d2;
+    private ChoiceBox<?> t2ds1;
 
     @FXML
     private TextField t2N;
 
     @FXML
-    private ChoiceBox<?> t2d1;
+    private ChoiceBox<?> t2ds2;
 
     @FXML
     void doppelButton(ActionEvent event) {
@@ -82,18 +82,18 @@ public class HelloController {
 
         ObservableList t1nOb = FXCollections.observableList(t1NList);
         ObservableList t2nOb = FXCollections.observableList(t2NList);
-        t1d1.setItems(t1nOb);
-        t1d2.setItems(t1nOb);
-        t2d1.setItems(t2nOb);
-        t2d2.setItems(t2nOb);
+        t1ds1.setItems(t1nOb);
+        t1ds1.setItems(t1nOb);
+        t1ds2.setItems(t2nOb);
+        t1ds2.setItems(t2nOb);
     }
 
     @FXML
     void tunierstartButton(ActionEvent event) {
-        d1t1List.add(t1d1.getValue().toString());
-        d1t1List.add(t1d2.getValue().toString());
+        d1t1List.add(t1ds1.getValue().toString());
+        d1t1List.add(t1ds2.getValue().toString());
 
-        d1t2List.add(t2d1.getValue().toString());
-        d1t2List.add(t2d2.getValue().toString());
+        d1t2List.add(t2ds1.getValue().toString());
+        d1t2List.add(t2ds2.getValue().toString());
     }
 }

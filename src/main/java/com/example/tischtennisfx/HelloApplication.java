@@ -12,10 +12,12 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("inputWindow.fxml"));
+        FXMLLoader fxmlLoader3 = new FXMLLoader(HelloApplication.class.getResource("showWindow.fxml"));
         Scene scene1 = new Scene(fxmlLoader1.load(), 620, 420);
         Scene scene2 = new Scene(fxmlLoader2.load(), 620, 420);
+        Scene scene3 = new Scene(fxmlLoader3.load(), 620, 420);
         stage.setTitle("Hello!");
-        stage.setScene(scene2);
+        stage.setScene(scene1);
         stage.show();
     }
     public void mainWindows(){
