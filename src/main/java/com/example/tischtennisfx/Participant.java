@@ -3,18 +3,16 @@ package com.example.tischtennisfx;
 public class Participant {
 
 
-    Participant(String spielerName, String teamName) {
+    Participant(String spielerName, Team team) {
         setName(spielerName);
-        setTeam(teamName);
+        setTeam(team);
     }
 
     private String name;
 
-    private String position;
-
     private int doppel;
 
-    private String team;
+    private Team team;
 
     public String getName() {
         return name;
@@ -24,19 +22,11 @@ public class Participant {
         this.name = name;
     }
 
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getTeamName() {
+    public Team getTeam() {
         return team;
     }
 
-    public void setTeam(String team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 
@@ -46,5 +36,14 @@ public class Participant {
 
     public void setDoppel(int doppel) {
         this.doppel = doppel;
+    }
+
+    /**
+     *  Damit werden die Objekte korrekt in den Frontendelementen angezeigt.
+      */
+
+    @Override
+    public String toString()  {
+        return getName();
     }
 }
