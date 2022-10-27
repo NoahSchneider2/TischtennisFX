@@ -2,17 +2,17 @@ package com.example.tischtennisfx;
 
 public class Participant {
 
-
-    Participant(String spielerName, Team team) {
-        setName(spielerName);
-        setTeam(team);
-    }
-
+    private int position;
     private String name;
 
     private int doppel;
 
     private Team team;
+    Participant(String spielerName, Team team, int position) {
+        setName(spielerName);
+        setTeam(team);
+        setPosition(position);
+    }
 
     public String getName() {
         return name;
@@ -45,5 +45,13 @@ public class Participant {
     @Override
     public String toString()  {
         return getName();
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 }

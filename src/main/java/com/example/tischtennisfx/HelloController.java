@@ -11,13 +11,16 @@ import javafx.collections.FXCollections;
 
 public class HelloController {
 
-    private final ArrayList<Participant> participantsOfTeam1 = new ArrayList<Participant>();
-    private final ArrayList<Participant> participantsOfTeam2 = new ArrayList<Participant>();
+    private ArrayList<Participant> allParticipants = new ArrayList<Participant>();
+    private ArrayList<Participant> participantsOfTeam1 = new ArrayList<Participant>();
+    private ArrayList<Participant> participantsOfTeam2 = new ArrayList<Participant>();
 
     private Team team1;
     private Team team2;
 
     private final ArrayList<Match> matches = new ArrayList<Match>();
+
+    private int matchConter = 1;
 
 
     @FXML
@@ -65,15 +68,17 @@ public class HelloController {
         team1 = new Team(nameOfTeam1.getText());
         team2 = new Team(nameOfTeam2.getText());
 
-        participantsOfTeam1.add(new Participant(nameOfParticipant1.getText(), team1));
-        participantsOfTeam1.add(new Participant(nameOfParticipant2.getText(), team1));
-        participantsOfTeam1.add(new Participant(nameOfParticipant3.getText(), team1));
-        participantsOfTeam1.add(new Participant(nameOfParticipant4.getText(), team1));
+        participantsOfTeam1.add(new Participant(nameOfParticipant1.getText(), team1, 1));
+        participantsOfTeam1.add(new Participant(nameOfParticipant2.getText(), team1, 2));
+        participantsOfTeam1.add(new Participant(nameOfParticipant3.getText(), team1, 3));
+        participantsOfTeam1.add(new Participant(nameOfParticipant4.getText(), team1, 4));
 
-        participantsOfTeam2.add(new Participant(nameOfParticipant5.getText(), team2));
-        participantsOfTeam2.add(new Participant(nameOfParticipant6.getText(), team2));
-        participantsOfTeam2.add(new Participant(nameOfParticipant7.getText(), team2));
-        participantsOfTeam2.add(new Participant(nameOfParticipant8.getText(), team2));
+        participantsOfTeam2.add(new Participant(nameOfParticipant5.getText(), team2, 1));
+        participantsOfTeam2.add(new Participant(nameOfParticipant6.getText(), team2, 2));
+        participantsOfTeam2.add(new Participant(nameOfParticipant7.getText(), team2, 3));
+        participantsOfTeam2.add(new Participant(nameOfParticipant8.getText(), team2, 4));
+        allParticipants = participantsOfTeam1;
+        allParticipants.addAll(participantsOfTeam2);
         // TODO: Zeile 68-76 mit einer Schleife irgendwie cooler machen?
 
         ObservableList<Participant> t1nOb = FXCollections.observableList(participantsOfTeam1);
@@ -90,9 +95,9 @@ public class HelloController {
         t1ds2.getValue().setDoppel(1);
         t1ds1.getValue().setDoppel(1);
         t1ds2.getValue().setDoppel(1);
-        setDoppelForRemainingParticipants(participantsOfTeam1);
-        setDoppelForRemainingParticipants(participantsOfTeam2);
-        //TODO: Funktion die alle Matches erstellt.
+        setDoppelForRemainingParticipants(allParticipants);
+        createDoppelMatches();
+        createSingleMatches();
     }
 
     private void setDoppelForRemainingParticipants(ArrayList<Participant> participants) {
@@ -103,23 +108,60 @@ public class HelloController {
             }
         }
     }
-    private void createMatches() {
+    private void createSingleMatches() {
+        new Match(chooseParticipantsForMatch(1, 2), matchConter);
+        raiseCounter();
+        new Match(chooseParticipantsForMatch(2, 1), matchConter);
+        raiseCounter();
+        new Match(chooseParticipantsForMatch(3, 4), matchConter);
+        raiseCounter();
+        new Match(chooseParticipantsForMatch(4, 3), matchConter);
+        raiseCounter();
+        new Match(chooseParticipantsForMatch(1, 1), matchConter);
+        raiseCounter();
+        new Match(chooseParticipantsForMatch(2, 2), matchConter);
+        raiseCounter();
+        new Match(chooseParticipantsForMatch(3, 3), matchConter);
+        raiseCounter();
+        new Match(chooseParticipantsForMatch(4, 4), matchConter);
+        raiseCounter();
 
-        new Match()
     }
 
-    private Match createDoppelMatches() {
+    private void createDoppelMatches() {
         ArrayList<Participant> doppel1Participants = new ArrayList<Participant>();;
         ArrayList<Participant> doppel2Participants = new ArrayList<Participant>();;
 
         for (Participant participant :
-                participantsOfTeam1) {
+                allParticipants) {
             if(participant.getDoppel() == 1) {
                 doppel1Participants.add(participant);
                 continue;
             }
             doppel2Participants.add(participant);
         }
-        new Match(doppel1Participants, )
+
+        matches.add(new Match(doppel1Participants, matchConter));
+        raiseCounter();
+        matches.add(new Match(doppel2Participants, matchConter));
+        raiseCounter();
+    }
+    private void raiseCounter() {
+        matchConter++;
+    }
+    private Participant getParticipantByPosition(ArrayList<Participant> participants, int position) {
+        for (Participant participant :
+                participants) {
+            if (participant.getPosition() == position) {
+                return participant;
+            }
+        }
+        throw new RuntimeException();
+    }
+    private ArrayList<Participant> chooseParticipantsForMatch(int positionTeamOne, int positionTeamTwo) {
+        ArrayList<Participant> participants = new ArrayList<Participant>();
+        participants.add(getParticipantByPosition(participantsOfTeam1, positionTeamOne));
+        participants.add(getParticipantByPosition(participantsOfTeam2, positionTeamTwo));
+        return participants;
     }
 }
