@@ -41,27 +41,27 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="t1N" GridPane.columnIndex="1">
+            <TextField fx:id="nameOfTeam1" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="T1S1N" promptText="Spieler 1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="nameOfParticipant1" promptText="Spieler 1" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="T1S2N" promptText="Spieler 2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="nameOfParticipant2" promptText="Spieler 2" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="T1S3N" promptText="Spieler 3" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="nameOfParticipant3" promptText="Spieler 3" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="T1S4N" promptText="Spieler 4" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="nameOfParticipant4" promptText="Spieler 4" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
@@ -87,27 +87,27 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="t2N" GridPane.columnIndex="1">
+            <TextField fx:id="nameOfTeam2" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="T2S1N" promptText="Spieler 1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="nameOfParticipant5" promptText="Spieler 1" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="T2S2N" promptText="Spieler 2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="nameOfParticipant6" promptText="Spieler 2" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="T2S3N" promptText="Spieler 3" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="nameOfParticipant7" promptText="Spieler 3" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="T2S4N" promptText="Spieler 4" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="nameOfParticipant8" promptText="Spieler 4" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>

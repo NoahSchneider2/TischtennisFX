@@ -4,24 +4,38 @@ import java.util.ArrayList;
 
 public class Match {
 
-    Match(ArrayList<Participant> participants, ArrayList<Team> teams, int matchNumber) {
+    public Match(ArrayList<Participant> participants, int matchNumber) {
         setMatchNumber(matchNumber);
-        setTeamOne(teams.get(0));
-        setTeamOne(teams.get(1));
         checkIfDoubleMatch(participants);
+        setTeamsFromParticipants(participants);
         partParticipantsByTeam(participants);
     }
+
+    private void setTeamsFromParticipants(ArrayList<Participant> participants) {
+        for (Participant participant :
+                participants) {
+            if(teamOne == participant.getTeam() || teamTwo == participant.getTeam()) {
+                continue;
+            }
+            if(teamOne != null) {
+                teamTwo = participant.getTeam();
+                continue;
+            }
+            teamOne = participant.getTeam();
+        }
+    }
+
     private int matchNumber;
     private boolean doppel = false;
     private int pointsOfTeamOne = 0;
     private int pointsOfTeamTwo = 0;
     private Team teamOne;
     private Team teamTwo;
-    private ArrayList<Participant> teamOneParticipants = new ArrayList<Participant>(); //TODO: Mal schauen wie wir das im Frontend ausgeben
-    private ArrayList<Participant> teamTwoParticipants = new ArrayList<Participant>(); //TODO: Mal schauen wie wir das im Frontend ausgeben
+    public ArrayList<Participant> teamOneParticipants = new ArrayList<Participant>(); //TODO: Mal schauen wie wir das im Frontend ausgeben
+    public ArrayList<Participant> teamTwoParticipants = new ArrayList<Participant>(); //TODO: Mal schauen wie wir das im Frontend ausgeben
     private void partParticipantsByTeam(ArrayList<Participant> participants) {
         for (Participant participant: participants) {
-            if(participant.getTeamName() == teamOne.getName()) {
+            if(participant.getTeam().getName() == teamOne.getName()) {
                 teamOneParticipants.add(participant);
             } else {
                 teamTwoParticipants.add(participant);
@@ -34,14 +48,18 @@ public class Match {
             setDoppel(true);
         }
     }
-
-    public void checkWhoIsWinning() {
+    public void checkIfEnded() {
+        if((pointsOfTeamOne + pointsOfTeamTwo) == 5) {
+            checkWinner();
+        }
+    }
+    private String checkWinner() {
         if(pointsOfTeamOne == 3) {
             teamOne.addWonMatch();
+            return teamOne.getName();
         }
-        if(pointsOfTeamTwo == 3) {
             teamTwo.addWonMatch();
-        }
+            return teamTwo.getName();
     }
 
     public boolean isDoppel() {
