@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
         Scene scene2 = new Scene(fxmlLoader2.load(), 620, 420);
         Scene scene3 = new Scene(fxmlLoader3.load(), 620, 420);
         stage.setTitle("Hello!");
-        stage.setScene(scene1);
+        stage.setScene(scene3);
         stage.show();
     }
     public void mainWindows(){
