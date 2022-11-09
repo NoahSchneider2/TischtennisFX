@@ -2,7 +2,7 @@ package com.example.tischtennisfx;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class showWindow {
+public class showController {
 
     @FXML
     private Label T1Name;

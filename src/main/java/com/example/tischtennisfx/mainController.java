@@ -65,7 +65,6 @@ public class mainController {
         ++tisch1T2P;
         Tisch1T2NP.setText(""+tisch1T2P);
     }
-
     @FXML
     void addTisch2T1(ActionEvent event) {
         ++tisch2T1P;

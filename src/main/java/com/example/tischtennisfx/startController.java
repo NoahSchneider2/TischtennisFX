@@ -2,14 +2,20 @@ package com.example.tischtennisfx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList; // Package for the ArrayList
 import javafx.collections.ObservableList; // Package for the ObservableList
 import javafx.collections.FXCollections;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
-public class HelloController {
+public class startController {
 
     private ArrayList<Participant> allParticipants = new ArrayList<Participant>();
     private ArrayList<Participant> participantsOfTeam1 = new ArrayList<Participant>();
@@ -23,6 +29,12 @@ public class HelloController {
     private int matchConter = 1;
 
 
+
+    @FXML
+    private Label mannschaft1;
+
+    @FXML
+    private Label mannschaft2;
     @FXML
     private TextField nameOfParticipant1;
 
@@ -62,11 +74,30 @@ public class HelloController {
     private ChoiceBox<Participant> t2ds1;
     @FXML
     private ChoiceBox<Participant> t2ds2;
+    @FXML
+    private GridPane leftGrid;
+    @FXML
+    private GridPane rightGrid;
+    @FXML
+    private Button tunierButton;
+
+    @FXML
+    private Label doppelLabel;
+
 
     @FXML
     void doppelButton(ActionEvent event) {
+        leftGrid.setVisible(true);
+        rightGrid.setVisible(true);
+        doppelLabel.setVisible(true);
+        tunierButton.setVisible(true);
+
         team1 = new Team(nameOfTeam1.getText());
         team2 = new Team(nameOfTeam2.getText());
+
+        mannschaft1.setText(team1.getName());
+        mannschaft2.setText(team2.getName());
+
 
         participantsOfTeam1.add(new Participant(nameOfParticipant1.getText(), team1, 1));
         participantsOfTeam1.add(new Participant(nameOfParticipant2.getText(), team1, 2));
@@ -77,7 +108,7 @@ public class HelloController {
         participantsOfTeam2.add(new Participant(nameOfParticipant6.getText(), team2, 2));
         participantsOfTeam2.add(new Participant(nameOfParticipant7.getText(), team2, 3));
         participantsOfTeam2.add(new Participant(nameOfParticipant8.getText(), team2, 4));
-        allParticipants = participantsOfTeam1;
+        allParticipants.addAll(participantsOfTeam1);
         allParticipants.addAll(participantsOfTeam2);
         // TODO: Zeile 68-76 mit einer Schleife irgendwie cooler machen?
 
@@ -88,7 +119,22 @@ public class HelloController {
         t2ds1.setItems(t2nOb);
         t2ds2.setItems(t2nOb);
     }
-
+    Stage stage1;
+    void setStage(Stage stage){
+        stage1=stage;
+    }
+    Stage stage2;
+    void setStage2(Stage stage){
+        stage2=stage;
+    }
+    Scene scene2;
+    void setScene2(Scene scene){
+        scene2 = scene;
+    }
+    Scene scene3;
+    void setScene3(Scene scene){
+        scene3 = scene;
+    }
     @FXML
     void tunierstartButton(ActionEvent event) {
         t1ds1.getValue().setDoppel(1);
@@ -98,7 +144,14 @@ public class HelloController {
         setDoppelForRemainingParticipants(allParticipants);
         createDoppelMatches();
         createSingleMatches();
+
+        stage1.setTitle("TischtennisTunier");
+        stage1.setScene(scene2);
+        stage2.setTitle("TischtennisTunier");
+        stage2.setScene(scene3);
+        stage2.show();
     }
+
 
     private void setDoppelForRemainingParticipants(ArrayList<Participant> participants) {
         for (Participant participant :
