@@ -2,15 +2,17 @@ package com.example.tischtennisfx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.util.ArrayList; // Package for the ArrayList
-import javafx.collections.ObservableList; // Package for the ObservableList
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -136,22 +138,39 @@ public class startController {
         scene3 = scene;
     }
     @FXML
-    void tunierstartButton(ActionEvent event) {
-        t1ds1.getValue().setDoppel(1);
-        t1ds2.getValue().setDoppel(1);
-        t1ds1.getValue().setDoppel(1);
-        t1ds2.getValue().setDoppel(1);
-        setDoppelForRemainingParticipants(allParticipants);
-        createDoppelMatches();
-        createSingleMatches();
 
+        void tunierstartButton(ActionEvent event) {
+        if(!fourDifferentParticipantsSelected()) {
+            System.out.println("Es wurden nicht 4 verschiedene Spieler für Doppel ausgewählt.");
+            return;
+        }
+            t1ds1.getValue().setDoppel(1);
+            t1ds2.getValue().setDoppel(1);
+            t2ds1.getValue().setDoppel(1);
+            t2ds2.getValue().setDoppel(1);
+            setDoppelForRemainingParticipants(allParticipants);
+            createDoppelMatches();
+            createSingleMatches();
         stage1.setTitle("TischtennisTunier");
         stage1.setScene(scene2);
         stage2.setTitle("TischtennisTunier");
         stage2.setScene(scene3);
         stage2.show();
-    }
+        }
 
+    private boolean fourDifferentParticipantsSelected() {
+
+        ArrayList<String> participants = new ArrayList<>();
+        participants.add(t1ds1.getValue().getName());
+        participants.add(t1ds2.getValue().getName());
+        participants.add(t2ds1.getValue().getName());
+        participants.add(t2ds2.getValue().getName());
+        Set<String> set = new HashSet<String>(participants);
+        if(set.size() < participants.size()){
+            return false;
+        }
+        return true;
+    }
 
     private void setDoppelForRemainingParticipants(ArrayList<Participant> participants) {
         for (Participant participant :
