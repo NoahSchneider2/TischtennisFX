@@ -77,12 +77,19 @@ public class Match {
     public int getPointsOfTeamTwo() {
         return pointsOfTeamTwo;
     }
+
     public void addPointToTeamOne() {
         pointsOfTeamOne++;
+    }
+    public void subPointToTeamOne() {
+        pointsOfTeamOne--;
     }
 
     public void addPointToTeamTwo() {
         pointsOfTeamTwo++;
+    }
+    public void subPointToTeamTwo() {
+        pointsOfTeamTwo--;
     }
 
     public Team getTeamOne() {
