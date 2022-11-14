@@ -26,7 +26,7 @@ public class Match {
     }
 
     private int matchNumber;
-    private boolean doppel = false;
+    private boolean doubleMatch = false;
     private int pointsOfTeamOne = 0;
     private int pointsOfTeamTwo = 0;
     private Team teamOne;
@@ -45,7 +45,7 @@ public class Match {
 
     private void checkIfDoubleMatch(ArrayList<Participant> spielerListe) {
         if(spielerListe.size() == 4) {
-            setDoppel(true);
+            setDoubleMatch(true);
         }
     }
     public void checkIfEnded() {
@@ -62,12 +62,12 @@ public class Match {
             return teamTwo.getName();
     }
 
-    public boolean isDoppel() {
-        return doppel;
+    public boolean isDoubleMatch() {
+        return doubleMatch;
     }
 
-    public void setDoppel(boolean doppel) {
-        this.doppel = doppel;
+    public void setDoubleMatch(boolean doubleMatch) {
+        this.doubleMatch = doubleMatch;
     }
 
     public int getPointsOfTeamOne() {

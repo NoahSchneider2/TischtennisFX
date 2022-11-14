@@ -5,7 +5,7 @@ public class Participant {
     private int position;
     private String name;
 
-    private int doppel;
+    private int doubleUnit;
 
     private Team team;
     Participant(String spielerName, Team team, int position) {
@@ -30,12 +30,12 @@ public class Participant {
         this.team = team;
     }
 
-    public int getDoppel() {
-        return doppel;
+    public int getDouble() {
+        return doubleUnit;
     }
 
-    public void setDoppel(int doppel) {
-        this.doppel = doppel;
+    public void setDouble(int doubleUnit) {
+        this.doubleUnit = doubleUnit;
     }
 
     /**
