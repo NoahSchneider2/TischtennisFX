@@ -18,10 +18,10 @@ public class Match {
                 continue;
             }
             if(teamOne != null) {
-                teamTwo = participant.getTeam();
+                setTeamTwo(participant.getTeam());
                 continue;
             }
-            teamOne = participant.getTeam();
+            setTeamOne(participant.getTeam());
         }
     }
 
@@ -115,5 +115,9 @@ public class Match {
 
     public void setMatchNumber(int matchNumber) {
         this.matchNumber = matchNumber;
+    }
+    @Override
+    public String toString()  {
+        return "Match Nr. " + getMatchNumber();
     }
 }

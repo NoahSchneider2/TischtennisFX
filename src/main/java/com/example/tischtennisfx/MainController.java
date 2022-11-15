@@ -1,5 +1,7 @@
 package com.example.tischtennisfx;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,97 +17,120 @@ public class MainController {
 
     private ArrayList<Match> matches = new ArrayList<Match>();
     @FXML
-    private ComboBox<?> Combo1;
+    private ComboBox<Match> dropdownMenuLeft;
 
     @FXML
-    private ComboBox<?> Combo2;
+    private ComboBox<Match> dropdownMenuRight;
 
-    private Match matchOnTableOne;
+    private Match matchOnLeftTable;
 
-    private Match matchOnTableTwo;
-    @FXML
-    private Button Table1Start;
+    private Match matchOnRightTable;
 
     @FXML
-    private Label Table1T1N;
+    private Label teamOnePlayerNameLeftTable;
 
     @FXML
-    private Label Table1T1NP;
+    private Label pointsTeamOneLeftTable;
 
     @FXML
-    private Label Table1T2N;
+    private Label teamTwoPlayerNameLeftTable;
 
     @FXML
-    private Label Table1T2NP;
+    private Label pointsTeamTwoLeftTable;
+    @FXML
+    private Label teamOnePlayerNameRightTable;
 
     @FXML
-    private Button Table2Start;
+    private Label pointsTeamOneRightTable;
 
     @FXML
-    private Label Table2T1N;
+    private Label teamTwoPlayerNameRightTable;
 
     @FXML
-    private Label Table2T1NP;
-
-    @FXML
-    private Label Table2T2N;
-
-    @FXML
-    private Label Table2T2NP;
+    private Label pointsTeamTwoRightTable;
 
     @FXML
     private Button addTable2T2;
 
+    public MainController() {
+    }
+
     @FXML
-    public void initalizeController()
+    public void initializeController()
     {
-        //TODO Dropdowns und Labels befüllen
+        ObservableList<Match> matchesForDropdown = FXCollections.observableList(matches);
+        this.dropdownMenuLeft.setItems(matchesForDropdown);
+        this.dropdownMenuRight.setItems(matchesForDropdown);
+    }
+    public void startMatchForLeftTable(ActionEvent event) {
+        Match match = dropdownMenuLeft.getValue();
+        chooseActiveMatch(match, "left");
+    }
+    public void startMatchForRightTable(ActionEvent event) {
+        Match match = dropdownMenuRight.getValue();
+        chooseActiveMatch(match, "right");
+    }
+    
+    private void chooseActiveMatch(Match match, String table) {
+        if(table == "left"){
+            matchOnLeftTable = match;
+            teamOnePlayerNameLeftTable.setText(match.getTeamOne().getName());
+            teamTwoPlayerNameLeftTable.setText(match.getTeamTwo().getName());
+            return;
+        }
+        if(table == "right") {
+            matchOnRightTable = match;
+            teamOnePlayerNameRightTable.setText(match.getTeamOne().getName());
+            teamTwoPlayerNameRightTable.setText(match.getTeamTwo().getName());
+            return;
+        }
+        System.out.println("Fehlerhafte Tischnummer");
     }
 
-    void addTable1T1(ActionEvent event) {
-        ++tisch1T1P;
-        Table1T1NP.setText(""+tisch1T1P);
-    }
-
-    @FXML
-    void addTable1T2(ActionEvent event) {
-        ++tisch1T2P;
-        Table1T2NP.setText(""+tisch1T2P);
-    }
-    @FXML
-    void addTable2T1(ActionEvent event) {
-        ++tisch2T1P;
-        Table2T1NP.setText(""+tisch2T1P);
-    }
-
-    @FXML
-    void addTable2T2(ActionEvent event) {
-        ++tisch2T2P;
-        Table2T2NP.setText(""+tisch2T2P);
-    }
-
-    @FXML
-    void delTable1T1(ActionEvent event) {
-        --tisch1T1P;
-        Table1T1NP.setText(""+tisch1T1P);
-    }
-
-    @FXML
-    void delTable1T2(ActionEvent event) {
-        --tisch1T2P;
-        Table1T2NP.setText(""+tisch1T2P);
+    public void plusPointTeamOneLeftTable(ActionEvent event) {
+        matchOnLeftTable.addPointToTeamOne();
+        pointsTeamOneLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamOne());
     }
 
     @FXML
-    void delTable2T1(ActionEvent event) {
-        --tisch2T1P;
-        Table2T1NP.setText(""+tisch2T1P);
+    public void plusPointTeamTwoLeftTable(ActionEvent event) {
+        matchOnLeftTable.addPointToTeamTwo();
+        pointsTeamTwoLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamTwo());
+    }
+    @FXML
+    public void plusPointTeamOneRightTable(ActionEvent event) {
+        matchOnRightTable.addPointToTeamOne();
+        pointsTeamOneRightTable.setText("" + matchOnRightTable.getPointsOfTeamOne());
     }
 
     @FXML
-    void delTable2T2(ActionEvent event) {
-        --tisch2T2P;
-        Table2T2NP.setText(""+tisch2T2P);
+    public void plusPointTeamTwoRightTable(ActionEvent event) {
+        matchOnRightTable.addPointToTeamTwo();
+        pointsTeamTwoRightTable.setText("" + matchOnRightTable.getPointsOfTeamTwo());
+    }
+
+    @FXML
+    public void minusPointTeamOneLeftTable(ActionEvent event) {
+        matchOnLeftTable.subPointToTeamOne();
+        pointsTeamOneLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamOne());
+    }
+
+    @FXML
+    public void minusPointTeamTwoLeftTable(ActionEvent event) {
+        matchOnLeftTable.subPointToTeamOne();
+        pointsTeamTwoLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamTwo());
+    }
+
+    @FXML
+    public void minusPointTeamOneRightTable(ActionEvent event) {
+        matchOnRightTable.subPointToTeamOne();
+        pointsTeamOneRightTable.setText("" + matchOnRightTable.getPointsOfTeamOne());
+    }
+
+    @FXML
+    public void delTable2T2(ActionEvent event) {
+        matchOnRightTable.subPointToTeamTwo();
+        pointsTeamTwoRightTable.setText("" + matchOnRightTable.getPointsOfTeamTwo());
     }
 
     public Team getTeamOne() {

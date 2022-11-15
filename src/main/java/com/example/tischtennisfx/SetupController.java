@@ -236,9 +236,14 @@ public class SetupController {
 
         mainController.setTeamOne(teamOne);
         mainController.setTeamTwo(teamTwo);
+        mainController.initializeController();
 
         stageOne.setTitle("Tabletennistunier - Punkte setzen");
         stageOne.setScene(scene2);
+
+        ScoreController scoreController = (ScoreController) fxmlLoader3.getController();
+
+
         stageTwo.setTitle("TabletennisTunier - Zuschauer Augabe");
         stageTwo.setScene(scene3);
         stageTwo.show();
