@@ -18,15 +18,15 @@ public class Match {
                 continue;
             }
             if(teamOne != null) {
-                teamTwo = participant.getTeam();
+                setTeamTwo(participant.getTeam());
                 continue;
             }
-            teamOne = participant.getTeam();
+            setTeamOne(participant.getTeam());
         }
     }
 
     private int matchNumber;
-    private boolean doppel = false;
+    private boolean doubleMatch = false;
     private int pointsOfTeamOne = 0;
     private int pointsOfTeamTwo = 0;
     private Team teamOne;
@@ -45,7 +45,7 @@ public class Match {
 
     private void checkIfDoubleMatch(ArrayList<Participant> spielerListe) {
         if(spielerListe.size() == 4) {
-            setDoppel(true);
+            setDoubleMatch(true);
         }
     }
     public void checkIfEnded() {
@@ -62,12 +62,12 @@ public class Match {
             return teamTwo.getName();
     }
 
-    public boolean isDoppel() {
-        return doppel;
+    public boolean isDoubleMatch() {
+        return doubleMatch;
     }
 
-    public void setDoppel(boolean doppel) {
-        this.doppel = doppel;
+    public void setDoubleMatch(boolean doubleMatch) {
+        this.doubleMatch = doubleMatch;
     }
 
     public int getPointsOfTeamOne() {
@@ -77,12 +77,19 @@ public class Match {
     public int getPointsOfTeamTwo() {
         return pointsOfTeamTwo;
     }
+
     public void addPointToTeamOne() {
         pointsOfTeamOne++;
+    }
+    public void subPointToTeamOne() {
+        pointsOfTeamOne--;
     }
 
     public void addPointToTeamTwo() {
         pointsOfTeamTwo++;
+    }
+    public void subPointToTeamTwo() {
+        pointsOfTeamTwo--;
     }
 
     public Team getTeamOne() {
@@ -108,5 +115,9 @@ public class Match {
 
     public void setMatchNumber(int matchNumber) {
         this.matchNumber = matchNumber;
+    }
+    @Override
+    public String toString()  {
+        return "Match Nr. " + getMatchNumber();
     }
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tischtennisfx.mainController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tischtennisfx.MainController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="1.0" prefWidth="1.0" />
@@ -35,27 +35,27 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="Tisch1T1NP" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="pointsTeamOneLeftTable" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="Tisch1T2NP" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="pointsTeamTwoLeftTable" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#addTisch1T1" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#plusPointTeamOneLeftTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#addTisch1T2" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#plusPointTeamTwoLeftTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#delTisch1T1" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#minusPointTeamOneLeftTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -63,17 +63,17 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#delTisch1T2" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#minusPointTeamTwoLeftTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Label fx:id="Tisch1T1N" text="Spieler 1" GridPane.halignment="CENTER">
+            <Label fx:id="teamOnePlayerNameLeftTable" text="Spieler 1" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="Tisch1T2N" text="Spieler 2" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Label fx:id="teamTwoPlayerNameLeftTable" text="Spieler 2" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -92,27 +92,27 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label fx:id="Tisch2T1NP" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="pointsTeamOneRightTable" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="Tisch2T2NP" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="pointsTeamTwoRightTable" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#addTisch2T1" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#plusPointTeamOneRightTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="addTisch2T2" mnemonicParsing="false" onAction="#addTisch2T2" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="addTable2T2" mnemonicParsing="false" onAction="#plusPointTeamTwoRightTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#delTisch2T1" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#minusPointTeamOneRightTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -120,17 +120,17 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#delTisch2T2" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#delTable2T2" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Label fx:id="Tisch2T1N" text="Spieler 1" GridPane.halignment="CENTER">
+            <Label fx:id="teamOnePlayerNameRightTable" text="Spieler 1" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="Tisch2T2N" text="Spieler 2" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Label fx:id="teamTwoPlayerNameRightTable" text="Spieler 2" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -148,17 +148,17 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Tisch 1" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+            <Label text="Table 1" GridPane.columnSpan="2" GridPane.halignment="CENTER">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <ComboBox fx:id="Combo1" prefWidth="150.0" GridPane.rowIndex="1">
+            <ComboBox fx:id="dropdownMenuLeft" prefWidth="150.0" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
             </ComboBox>
-            <Button fx:id="Tisch1Start" mnemonicParsing="false" text="Spiel beginnen" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="startMatchForLeftTable" mnemonicParsing="false" text="Spiel beginnen" onAction="#startMatchForLeftTable" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
@@ -177,17 +177,17 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Tisch 2" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+            <Label text="Table 2" GridPane.columnSpan="2" GridPane.halignment="CENTER">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <ComboBox fx:id="Combo2" prefWidth="150.0" GridPane.rowIndex="1">
+            <ComboBox fx:id="dropdownMenuRight" prefWidth="150.0" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
             </ComboBox>
-            <Button fx:id="Tisch2Start" mnemonicParsing="false" text="Spiel beginnen" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="startMatchForRightTable" mnemonicParsing="false" onAction="#startMatchForRightTable" text="Spiel beginnen" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
