@@ -242,6 +242,7 @@ public class SetupController {
         stageOne.setScene(scene2);
 
         ScoreController scoreController = (ScoreController) fxmlLoader3.getController();
+        mainController.setScoreController(scoreController);
 
 
         stageTwo.setTitle("TabletennisTunier - Zuschauer Augabe");
