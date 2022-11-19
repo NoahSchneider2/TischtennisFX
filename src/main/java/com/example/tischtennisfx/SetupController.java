@@ -225,7 +225,7 @@ public class SetupController {
     }
     private void initializeNextStage() throws IOException {
         FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("mainWindow.fxml"));
-        FXMLLoader fxmlLoader3 = new FXMLLoader(Main.class.getResource("showWindow.fxml"));
+        FXMLLoader fxmlLoader3 = new FXMLLoader(Main.class.getResource("spectatorWindow.fxml"));
 
         Scene scene2 = new Scene(fxmlLoader2.load(), 620, 420);
         Scene scene3 = new Scene(fxmlLoader3.load(), 620, 420);
@@ -241,7 +241,7 @@ public class SetupController {
         stageOne.setTitle("Tabletennistunier - Punkte setzen");
         stageOne.setScene(scene2);
 
-        ScoreController scoreController = (ScoreController) fxmlLoader3.getController();
+        SpectatorController scoreController = (SpectatorController) fxmlLoader3.getController();
         mainController.setScoreController(scoreController);
 
 

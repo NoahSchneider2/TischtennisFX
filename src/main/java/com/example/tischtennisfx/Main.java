@@ -10,7 +10,7 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader(Main.class.getResource("startWindow.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(Main.class.getResource("setupWindow.fxml"));
 
         Scene scene1 = new Scene(fxmlLoader1.load(), 620, 420);
         stage.setTitle("Tabletennisturnier - Mannschaftseingabe");

@@ -2,7 +2,7 @@ package com.example.tischtennisfx;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class ScoreController {
+public class SpectatorController {
 
     @FXML
     private Label nameOfTeamOne;

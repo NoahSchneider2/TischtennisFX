@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class MainController {
 
-    private ScoreController scoreController;
+    private SpectatorController scoreController;
 
     private Team teamOne;
 
@@ -167,11 +167,11 @@ public class MainController {
         this.matches = matches;
     }
 
-    public void setScoreController(ScoreController scoreController) {
+    public void setScoreController(SpectatorController scoreController) {
         this.scoreController = scoreController;
     }
 
-    public ScoreController getScoreController() {
+    public SpectatorController getScoreController() {
         return scoreController;
     }
     private void updateLabels() {
@@ -180,7 +180,7 @@ public class MainController {
     }
 
     private void updateSpectatorLabels() {
-        ScoreController controller = getScoreController();
+        SpectatorController controller = getScoreController();
     }
     private void updateMainLabels() {
         pointsTeamOneLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamOne());
