@@ -129,8 +129,8 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="t1ds1" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="t1ds2" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="teamOnePlayerOneDropdown" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="teamOnePlayerTwoDropdown" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane fx:id="rightGrid" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -148,8 +148,8 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="t2ds1" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="t2ds2" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="teamTwoPlayerOneDropdown" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="teamTwoPlayerTwoDropdown" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />

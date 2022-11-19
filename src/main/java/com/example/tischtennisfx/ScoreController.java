@@ -11,33 +11,34 @@ public class ScoreController {
     private Label pointsOfTeamOne;
 
     @FXML
-    private Label T1Table1S1;
+    private Label teamOneTableOnePlayerOneName;
 
     @FXML
-    private Label T1Table1S1P;
+    private Label teamOneTableOnePlayerOnePoints;
 
     @FXML
-    private Label T1Table2S1;
+    private Label teamOneTableTwoPlayerOneName;
 
     @FXML
-    private Label T1Table2S1P;
+    private Label teamOneTableTwoPlayerOnePoints;
 
     @FXML
-    private Label T2Name;
+    private Label nameofTeamTwo;
 
     @FXML
-    private Label T2Punkte;
+    private Label pointsOfTeamTwo;
 
     @FXML
-    private Label T2Table1S2;
+    private Label teamTwoTableOnePlayerOneName;
 
     @FXML
-    private Label T2Table1S2P;
+    private Label teamTwoTableOnePlayerOnePoints;
 
     @FXML
-    private Label T2Table2S2;
+    private Label teamTwoTableTwoPlayerOneName;
 
     @FXML
-    private Label T2Table2S2P;
+    private Label teamTwoTableTwoPlayerOnePoints;
+
 
 }

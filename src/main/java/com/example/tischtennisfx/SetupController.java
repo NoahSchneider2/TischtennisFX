@@ -69,15 +69,15 @@ public class SetupController {
     private TextField nameOfTeamTwo;
     //TODO: Oof, gibts eine Möglichkeit die Felder zu gruppieren? @Noah
     @FXML
-    private ChoiceBox<Participant> t1ds1;
+    private ChoiceBox<Participant> teamOnePlayerOneDropdown;
 
     @FXML
-    private ChoiceBox<Participant> t1ds2;
+    private ChoiceBox<Participant> teamOnePlayerTwoDropdown;
 
     @FXML
-    private ChoiceBox<Participant> t2ds1;
+    private ChoiceBox<Participant> teamTwoPlayerOneDropdown;
     @FXML
-    private ChoiceBox<Participant> t2ds2;
+    private ChoiceBox<Participant> teamTwoPlayerTwoDropdown;
     @FXML
     private GridPane leftGrid;
     @FXML
@@ -123,10 +123,10 @@ public class SetupController {
 
         ObservableList<Participant> t1nOb = FXCollections.observableList(participantsOfTeamOne);
         ObservableList<Participant> t2nOb = FXCollections.observableList(participantsOfTeamTwo);
-        t1ds1.setItems(t1nOb);
-        t1ds2.setItems(t1nOb);
-        t2ds1.setItems(t2nOb);
-        t2ds2.setItems(t2nOb);
+        teamOnePlayerOneDropdown.setItems(t1nOb);
+        teamOnePlayerTwoDropdown.setItems(t1nOb);
+        teamTwoPlayerOneDropdown.setItems(t2nOb);
+        teamTwoPlayerTwoDropdown.setItems(t2nOb);
     }
     @FXML
 
@@ -136,10 +136,10 @@ public class SetupController {
             //TODO: Das wird hier nur in der Konsole ausgegeben, sollte aber als Pop-Up im Programm auftauchen. Kannst du das was machen, @Noah?
             return;
         }
-            t1ds1.getValue().setDouble(1);
-            t1ds2.getValue().setDouble(1);
-            t2ds1.getValue().setDouble(1);
-            t2ds2.getValue().setDouble(1);
+            teamOnePlayerOneDropdown.getValue().setDouble(1);
+            teamOnePlayerTwoDropdown.getValue().setDouble(1);
+            teamTwoPlayerOneDropdown.getValue().setDouble(1);
+            teamTwoPlayerTwoDropdown.getValue().setDouble(1);
             setDoubleForRemainingParticipants(allParticipants);
             createDoubleMatches();
             createSingleMatches();
@@ -151,10 +151,10 @@ public class SetupController {
     private boolean fourDifferentParticipantsSelected() {
 
         ArrayList<String> participants = new ArrayList<>();
-        participants.add(t1ds1.getValue().getName());
-        participants.add(t1ds2.getValue().getName());
-        participants.add(t2ds1.getValue().getName());
-        participants.add(t2ds2.getValue().getName());
+        participants.add(teamOnePlayerOneDropdown.getValue().getName());
+        participants.add(teamOnePlayerTwoDropdown.getValue().getName());
+        participants.add(teamTwoPlayerOneDropdown.getValue().getName());
+        participants.add(teamTwoPlayerTwoDropdown.getValue().getName());
         Set<String> set = new HashSet<String>(participants);
         return set.size() >= participants.size();
     }
