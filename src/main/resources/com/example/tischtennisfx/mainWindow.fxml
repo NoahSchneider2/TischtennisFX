@@ -30,32 +30,33 @@
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="pointsTeamOneLeftTable" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="pointsTeamOneLeftTable" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="pointsTeamTwoLeftTable" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="pointsTeamTwoLeftTable" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#plusPointTeamOneLeftTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#plusPointTeamOneLeftTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#plusPointTeamTwoLeftTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#plusPointTeamTwoLeftTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#minusPointTeamOneLeftTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#minusPointTeamOneLeftTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -63,17 +64,22 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#minusPointTeamTwoLeftTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#minusPointTeamTwoLeftTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Label fx:id="teamOnePlayerNameLeftTable" text="Spieler 1" GridPane.halignment="CENTER">
+            <Label fx:id="teamOnePlayerNameLeftTable" text="Spieler 1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="teamTwoPlayerNameLeftTable" text="Spieler 2" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Label fx:id="teamTwoPlayerNameLeftTable" text="Spieler 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="MatchNumberLabelLeft" text="-" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -90,29 +96,30 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label fx:id="pointsTeamOneRightTable" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="pointsTeamOneRightTable" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="pointsTeamTwoRightTable" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="pointsTeamTwoRightTable" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#plusPointTeamOneRightTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#plusPointTeamOneRightTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="addTable2T2" mnemonicParsing="false" onAction="#plusPointTeamTwoRightTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#plusPointTeamTwoRightTable" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#minusPointTeamOneRightTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#minusPointTeamOneRightTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -120,17 +127,22 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#delTable2T2" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#delTable2T2" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Label fx:id="teamOnePlayerNameRightTable" text="Spieler 1" GridPane.halignment="CENTER">
+            <Label fx:id="teamOnePlayerNameRightTable" text="Spieler 1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="teamTwoPlayerNameRightTable" text="Spieler 2" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Label fx:id="teamTwoPlayerNameRightTable" text="Spieler 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="MatchNumberLabelRight" text="-" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -158,7 +170,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </ComboBox>
-            <Button fx:id="startMatchForLeftTable" mnemonicParsing="false" text="Spiel beginnen" onAction="#startMatchForLeftTable" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="startMatchForLeftTable" mnemonicParsing="false" onAction="#startMatchForLeftTable" text="Spiel beginnen" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>

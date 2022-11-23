@@ -50,7 +50,10 @@ public class MainController {
     private Label pointsTeamTwoRightTable;
 
     @FXML
-    private Button addTable2T2;
+    private Label MatchNumberLabelLeft;
+
+    @FXML
+    private Label MatchNumberLabelRight;
 
     public MainController() {
     }
