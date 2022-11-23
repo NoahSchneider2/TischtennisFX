@@ -9,7 +9,7 @@ public class SpectatorController {
     private Label nameOfTeamOne;
 
     @FXML
-    private Label nameofTeamTwo;
+    private Label nameOfTeamTwo;
 
     @FXML
     private Label pointsOfTeamOne;
@@ -18,39 +18,39 @@ public class SpectatorController {
     private Label pointsOfTeamTwo;
 
     @FXML
-    private Label teamOneTableOnePlayerOneName;
+    private Label teamOneTableLeftPlayerOneName;
 
     @FXML
-    private Label teamOneTableOnePlayerOnePoints;
+    private Label teamOneTableLeftPoints;
 
     @FXML
-    private Label teamOneTableOnePlayerTwoName;
+    private Label teamOneTableLeftPlayerTwoName;
 
     @FXML
-    private Label teamOneTableTwoPlayerOneName;
+    private Label teamOneTableRightPlayerOneName;
 
     @FXML
-    private Label teamOneTableTwoPlayerOnePoints;
+    private Label teamOneTableRightPoints;
 
     @FXML
-    private Label teamOneTableTwoPlayerTwoName;
+    private Label teamOneTableRightPlayerTwoName;
 
     @FXML
-    private Label teamTwoTableOnePlayerOneName;
+    private Label teamTwoTableLeftPlayerOneName;
 
     @FXML
-    private Label teamTwoTableOnePlayerOnePoints;
+    private Label teamTwoTableLeftPoints;
 
     @FXML
-    private Label teamTwoTableOnePlayerTwoName;
+    private Label teamTwoTableLeftPlayerTwoName;
 
     @FXML
-    private Label teamTwoTableTwoPlayerOneName;
+    private Label teamTwoTableRightPlayerOneName;
 
     @FXML
-    private Label teamTwoTableTwoPlayerOnePoints;
+    private Label teamTwoTableRightPoints;
 
     @FXML
-    private Label teamTwoTableTwoPlayerTwoName;
+    private Label teamTwoTableRightPlayerTwoName;
 
 }
