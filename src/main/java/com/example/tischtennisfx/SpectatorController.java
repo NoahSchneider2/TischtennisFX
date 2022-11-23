@@ -53,4 +53,67 @@ public class SpectatorController {
     @FXML
     private Label teamTwoTableRightPlayerTwoName;
 
+    public Label getNameOfTeamOne() {
+        return nameOfTeamOne;
+    }
+
+    public Label getNameOfTeamTwo() {
+        return nameOfTeamTwo;
+    }
+
+    public Label getPointsOfTeamOne() {
+        return pointsOfTeamOne;
+    }
+
+    public Label getPointsOfTeamTwo() {
+        return pointsOfTeamTwo;
+    }
+
+    public Label getTeamOneTableLeftPlayerOneName() {
+        return teamOneTableLeftPlayerOneName;
+    }
+
+    public Label getTeamOneTableLeftPlayerTwoName() {
+        return teamOneTableLeftPlayerTwoName;
+    }
+
+    public Label getTeamOneTableLeftPoints() {
+        return teamOneTableLeftPoints;
+    }
+
+    public Label getTeamTwoTableLeftPlayerOneName() {
+        return teamTwoTableLeftPlayerOneName;
+    }
+
+    public Label getTeamTwoTableLeftPlayerTwoName() {
+        return teamTwoTableLeftPlayerTwoName;
+    }
+
+    public Label getTeamTwoTableLeftPoints() {
+        return teamTwoTableLeftPoints;
+    }
+
+    public Label getTeamOneTableRightPlayerOneName() {
+        return teamOneTableRightPlayerOneName;
+    }
+
+    public Label getTeamOneTableRightPlayerTwoName() {
+        return teamOneTableRightPlayerTwoName;
+    }
+
+    public Label getTeamOneTableRightPoints() {
+        return teamOneTableRightPoints;
+    }
+
+    public Label getTeamTwoTableRightPlayerOneName() {
+        return teamTwoTableRightPlayerOneName;
+    }
+
+    public Label getTeamTwoTableRightPlayerTwoName() {
+        return teamTwoTableRightPlayerTwoName;
+    }
+
+    public Label getTeamTwoTableRightPoints() {
+        return teamTwoTableRightPoints;
+    }
 }
