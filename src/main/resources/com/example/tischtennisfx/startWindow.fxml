@@ -38,33 +38,48 @@
          <children>
             <Label text="Mannschaft 1:" GridPane.halignment="CENTER">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
             <TextField fx:id="nameOfTeamOne" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="nameOfParticipant1" promptText="Spieler 1" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="nameOfParticipant2" promptText="Spieler 2" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="nameOfParticipant3" promptText="Spieler 3" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="nameOfParticipant4" promptText="Spieler 4" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
          </children>
       </GridPane>
@@ -84,33 +99,48 @@
          <children>
             <Label text="Mannschaft 2:" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
             <TextField fx:id="nameOfTeamTwo" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="nameOfParticipant5" promptText="Spieler 1" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="nameOfParticipant6" promptText="Spieler 2" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="nameOfParticipant7" promptText="Spieler 3" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="nameOfParticipant8" promptText="Spieler 4" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
          </children>
       </GridPane>
@@ -126,11 +156,11 @@
          <children>
             <Label fx:id="mannschaft1" text="Mannschaft 1" GridPane.halignment="CENTER">
                <font>
-                  <Font size="18.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="teamOnePlayerOneDropdown" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="teamOnePlayerTwoDropdown" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="teamOnePlayerOneDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="teamOnePlayerTwoDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane fx:id="rightGrid" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -145,11 +175,11 @@
          <children>
             <Label fx:id="mannschaft2" text="Mannschaft 2" GridPane.halignment="CENTER">
                <font>
-                  <Font size="18.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="teamTwoPlayerOneDropdown" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="teamTwoPlayerTwoDropdown" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="teamTwoPlayerOneDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="teamTwoPlayerTwoDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
