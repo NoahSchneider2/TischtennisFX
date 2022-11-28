@@ -237,6 +237,7 @@ public class SetupController {
         mainController.setTeamOne(teamOne);
         mainController.setTeamTwo(teamTwo);
         mainController.initializeController();
+        mainController.setupMainTeamLabels();
 
         stageOne.setTitle("Tabletennistunier - Punkte setzen");
         stageOne.setScene(scene2);
