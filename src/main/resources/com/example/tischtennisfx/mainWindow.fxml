@@ -126,7 +126,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#delTable2T2" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+            <Button mnemonicParsing="false" onAction="#minusPointTeamTwoRightTable" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
                </font>
