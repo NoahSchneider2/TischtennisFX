@@ -5,6 +5,12 @@ import javafx.scene.control.Label;
 
 public class SpectatorController {
 
+
+    @FXML
+    private Label leftMatchLabel;
+    @FXML
+    private Label rightMatchLabel;
+
     @FXML
     private Label nameOfTeamOne;
 

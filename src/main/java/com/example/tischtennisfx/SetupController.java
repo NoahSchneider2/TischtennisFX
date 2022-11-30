@@ -33,7 +33,8 @@ public class SetupController {
     private int matchConter = 1;
 
 
-
+    @FXML
+    private Label errorLabel;
     @FXML
     private Label mannschaft1;
 
