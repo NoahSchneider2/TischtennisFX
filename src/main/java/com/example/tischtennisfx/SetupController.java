@@ -30,7 +30,7 @@ public class SetupController {
 
     private final ArrayList<Match> matches = new ArrayList<Match>();
 
-    private int matchConter = 1;
+    private int matchCounter = 0;
 
 
     @FXML
@@ -90,8 +90,7 @@ public class SetupController {
     private Label doubleLabel;
     private Stage stageOne;
 
-    public void setStageOne(Stage receivedStage)
-    {
+    public void setStageOne(Stage receivedStage) {
         stageOne = receivedStage;
     }
 
@@ -129,24 +128,38 @@ public class SetupController {
         teamTwoPlayerOneDropdown.setItems(t2nOb);
         teamTwoPlayerTwoDropdown.setItems(t2nOb);
     }
-    @FXML
 
-        void tunierstartButton(ActionEvent event) throws IOException {
-        if(!fourDifferentParticipantsSelected()) {
+    @FXML
+    void startTournamentButton(ActionEvent event) throws IOException {
+        if (!fourDifferentParticipantsSelected()) {
             System.out.println("Es wurden nicht 4 verschiedene Spieler für Doppel ausgewählt.");
             //TODO: Das wird hier nur in der Konsole ausgegeben, sollte aber als Pop-Up im Programm auftauchen. Kannst du das was machen, @Noah?
             return;
         }
-            teamOnePlayerOneDropdown.getValue().setDouble(1);
-            teamOnePlayerTwoDropdown.getValue().setDouble(1);
-            teamTwoPlayerOneDropdown.getValue().setDouble(1);
-            teamTwoPlayerTwoDropdown.getValue().setDouble(1);
-            setDoubleForRemainingParticipants(allParticipants);
-            createDoubleMatches();
-            createSingleMatches();
-            initializeNextStage();
+        teamOnePlayerOneDropdown.getValue().setDouble(1);
+        teamOnePlayerTwoDropdown.getValue().setDouble(1);
+        teamTwoPlayerOneDropdown.getValue().setDouble(1);
+        teamTwoPlayerTwoDropdown.getValue().setDouble(1);
+        setDoubleForRemainingParticipants(allParticipants);
+        createSingleMatches();
+        createDoubleMatches();
+        if(isWernerSchefflerSystem()) {
+            createAdditionalWernerSchefflerMatches();
+        }
+        initializeNextStage();
 
 
+    }
+
+    private void createAdditionalWernerSchefflerMatches() {
+        matches.add(new Match(chooseParticipantsForMatch(3, 1), matchCounter));
+        raiseCounter();
+        matches.add(new Match(chooseParticipantsForMatch(1, 3), matchCounter));
+        raiseCounter();
+        matches.add(new Match(chooseParticipantsForMatch(2, 4), matchCounter));
+        raiseCounter();
+        matches.add(new Match(chooseParticipantsForMatch(4, 2), matchCounter));
+        raiseCounter();
     }
 
     private boolean fourDifferentParticipantsSelected() {
@@ -168,23 +181,24 @@ public class SetupController {
             }
         }
     }
+
     private void createSingleMatches() {
-        matches.add(new Match(chooseParticipantsForMatch(1, 2), matchConter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(2, 1), matchConter));
+        matches.add(new Match(chooseParticipantsForMatch(1, 2), matchCounter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(3, 4), matchConter));
+        matches.add(new Match(chooseParticipantsForMatch(2, 1), matchCounter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(4, 3), matchConter));
+        matches.add(new Match(chooseParticipantsForMatch(3, 4), matchCounter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(1, 1), matchConter));
+        matches.add(new Match(chooseParticipantsForMatch(4, 3), matchCounter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(2, 2), matchConter));
+        matches.add(new Match(chooseParticipantsForMatch(1, 1), matchCounter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(3, 3), matchConter));
+        matches.add(new Match(chooseParticipantsForMatch(2, 2), matchCounter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(4, 4), matchConter));
+        matches.add(new Match(chooseParticipantsForMatch(3, 3), matchCounter));
         raiseCounter();
+        matches.add(new Match(chooseParticipantsForMatch(4, 4), matchCounter));
 
     }
 
@@ -194,21 +208,22 @@ public class SetupController {
 
         for (Participant participant :
                 allParticipants) {
-            if(participant.getDouble() == 1) {
+            if (participant.getDouble() == 1) {
                 double1Participants.add(participant);
                 continue;
             }
             double2Participants.add(participant);
         }
+        raiseCounter();
+        matches.add(new Match(double1Participants, matchCounter));
+        raiseCounter();
+        matches.add(new Match(double2Participants, matchCounter));
+    }
 
-        matches.add(new Match(double1Participants, matchConter));
-        raiseCounter();
-        matches.add(new Match(double2Participants, matchConter));
-        raiseCounter();
-    }
     private void raiseCounter() {
-        matchConter++;
+        matchCounter++;
     }
+
     private Participant getParticipantByPosition(ArrayList<Participant> participants, int position) {
         for (Participant participant :
                 participants) {
@@ -218,12 +233,14 @@ public class SetupController {
         }
         throw new RuntimeException();
     }
+
     private ArrayList<Participant> chooseParticipantsForMatch(int positionTeamOne, int positionTeamTwo) {
         ArrayList<Participant> participants = new ArrayList<Participant>();
         participants.add(getParticipantByPosition(participantsOfTeamOne, positionTeamOne));
         participants.add(getParticipantByPosition(participantsOfTeamTwo, positionTeamTwo));
         return participants;
     }
+
     private void initializeNextStage() throws IOException {
         FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("mainWindow.fxml"));
         FXMLLoader fxmlLoader3 = new FXMLLoader(Main.class.getResource("spectatorWindow.fxml"));

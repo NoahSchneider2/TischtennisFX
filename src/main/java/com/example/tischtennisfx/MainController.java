@@ -97,6 +97,7 @@ public class MainController {
         teamOneNameRightTable.setText(teamOne.getName());
         teamTwoNameRightTable.setText(teamTwo.getName());
     }
+    @FXML
     public void plusPointTeamOneLeftTable(ActionEvent event) {
         matchOnLeftTable.addPointToTeamOne();
         if(matchOnLeftTable.isOver()) {
@@ -153,6 +154,7 @@ public class MainController {
         updateScore();
     }
 
+    @FXML
     public void minusPointTeamTwoRightTable(ActionEvent event) {
         matchOnRightTable.subPointToTeamTwo();
         matchOnLeftTable.setbackWinnerIfNeeded();
