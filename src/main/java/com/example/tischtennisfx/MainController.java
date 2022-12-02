@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class MainController {
 
-    private SpectatorController scoreController;
+    private SpectatorController spectatorController;
 
     private Team teamOne;
 
@@ -171,55 +171,48 @@ public class MainController {
         this.matches = matches;
     }
 
-    public void setScoreController(SpectatorController scoreController) {
-        this.scoreController = scoreController;
-    }
-
-    public SpectatorController getScoreController() {
-        return scoreController;
+    public void setSpectatorController(SpectatorController spectatorController) {
+        this.spectatorController = spectatorController;
     }
 
     private void updateScore() {
-        SpectatorController controller = getScoreController();
         if (matchOnLeftTable != null) {
-            controller.getTeamOneTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamOne());
-            controller.getTeamTwoTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamTwo());
+            spectatorController.getTeamOneTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamOne());
+            spectatorController.getTeamTwoTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamTwo());
             pointsTeamOneLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamOne());
             pointsTeamTwoLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamTwo());
         }
         if (matchOnRightTable != null) {
-            controller.getTeamOneTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamOne());
-            controller.getTeamTwoTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamTwo());
+            spectatorController.getTeamOneTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamOne());
+            spectatorController.getTeamTwoTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamTwo());
             pointsTeamOneRightTable.setText("" + matchOnRightTable.getPointsOfTeamOne());
             pointsTeamTwoRightTable.setText("" + matchOnRightTable.getPointsOfTeamTwo());
         }
-        controller.getPointsOfTeamOne().setText("" + teamOne.getPoints());
-        controller.getPointsOfTeamTwo().setText("" + teamTwo.getPoints());
+        spectatorController.getPointsOfTeamOne().setText("" + teamOne.getPoints());
+        spectatorController.getPointsOfTeamTwo().setText("" + teamTwo.getPoints());
     }
 
     private void updateLeftSpectatorLabels() {
-        SpectatorController controller = getScoreController();
-        controller.getTeamOneTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamOneParticipants.get(0));
-        controller.getTeamTwoTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamTwoParticipants.get(0));
+        spectatorController.getTeamOneTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamOneParticipants.get(0));
+        spectatorController.getTeamTwoTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamTwoParticipants.get(0));
         if(matchOnLeftTable.isDoubleMatch()) {
-            controller.getTeamOneTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
-            controller.getTeamTwoTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
+            spectatorController.getTeamOneTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
+            spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
         } else {
-            controller.getTeamOneTableLeftPlayerTwoName().setText("");
-            controller.getTeamTwoTableLeftPlayerTwoName().setText("");
+            spectatorController.getTeamOneTableLeftPlayerTwoName().setText("");
+            spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("");
         }
     }
 
     private void updateRightSpectatorLabels() {
-        SpectatorController controller = getScoreController();
-        controller.getTeamOneTableRightPlayerOneName().setText("" + matchOnRightTable.teamOneParticipants.get(0));
-        controller.getTeamTwoTableRightPlayerOneName().setText("" + matchOnRightTable.teamTwoParticipants.get(0));
+        spectatorController.getTeamOneTableRightPlayerOneName().setText("" + matchOnRightTable.teamOneParticipants.get(0));
+        spectatorController.getTeamTwoTableRightPlayerOneName().setText("" + matchOnRightTable.teamTwoParticipants.get(0));
         if (matchOnRightTable.isDoubleMatch()) {
-            controller.getTeamOneTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
-            controller.getTeamTwoTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
+            spectatorController.getTeamOneTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
+            spectatorController.getTeamTwoTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
         } else {
-            controller.getTeamOneTableRightPlayerTwoName().setText("");
-            controller.getTeamTwoTableRightPlayerTwoName().setText("");
+            spectatorController.getTeamOneTableRightPlayerTwoName().setText("");
+            spectatorController.getTeamTwoTableRightPlayerTwoName().setText("");
         }
     }
 }
