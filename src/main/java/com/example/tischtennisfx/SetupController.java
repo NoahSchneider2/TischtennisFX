@@ -150,7 +150,6 @@ public class SetupController {
 //        }
         initializeNextStage();
     }
-
     private void createAdditionalWernerSchefflerMatches() {
         matches.add(new Match(chooseParticipantsForMatch(3, 1), matchCounter));
         raiseCounter();
@@ -161,7 +160,6 @@ public class SetupController {
         matches.add(new Match(chooseParticipantsForMatch(4, 2), matchCounter));
         raiseCounter();
     }
-
     private boolean fourDifferentParticipantsSelected() {
 
         ArrayList<String> participants = new ArrayList<>();
