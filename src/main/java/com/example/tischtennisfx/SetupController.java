@@ -36,10 +36,10 @@ public class SetupController {
     @FXML
     private Label errorLabel;
     @FXML
-    private Label mannschaft1;
+    private Label teamOneLabel;
 
     @FXML
-    private Label mannschaft2;
+    private Label teamTwoLabel;
     @FXML
     private TextField nameOfParticipant1;
 
@@ -104,9 +104,8 @@ public class SetupController {
         teamOne = new Team(nameOfTeamOne.getText());
         teamTwo = new Team(nameOfTeamTwo.getText());
 
-        mannschaft1.setText(teamOne.getName());
-        mannschaft2.setText(teamTwo.getName());
-
+        teamOneLabel.setText(teamOne.getName());
+        teamTwoLabel.setText(teamTwo.getName());
 
         participantsOfTeamOne.add(new Participant(nameOfParticipant1.getText(), teamOne, 1));
         participantsOfTeamOne.add(new Participant(nameOfParticipant2.getText(), teamOne, 2));
@@ -119,7 +118,6 @@ public class SetupController {
         participantsOfTeamTwo.add(new Participant(nameOfParticipant8.getText(), teamTwo, 4));
         allParticipants.addAll(participantsOfTeamOne);
         allParticipants.addAll(participantsOfTeamTwo);
-        // TODO: Zeile 68-76 mit einer Schleife irgendwie cooler machen?
 
         ObservableList<Participant> t1nOb = FXCollections.observableList(participantsOfTeamOne);
         ObservableList<Participant> t2nOb = FXCollections.observableList(participantsOfTeamTwo);
@@ -132,9 +130,13 @@ public class SetupController {
     @FXML
     void startTournamentButton(ActionEvent event) throws IOException {
         if (!fourDifferentParticipantsSelected()) {
-            System.out.println("Es wurden nicht 4 verschiedene Spieler für Doppel ausgewählt.");
-            //TODO: Das wird hier nur in der Konsole ausgegeben, sollte aber als Pop-Up im Programm auftauchen. Kannst du das was machen, @Noah?
+            if(errorLabel != null) {
+                errorLabel.setText("Es wurden nicht 4 verschiedene Spieler für Doppel ausgewählt.");
+            }
             return;
+        }
+        if(errorLabel != null) {
+            errorLabel.setText("");
         }
         teamOnePlayerOneDropdown.getValue().setDouble(1);
         teamOnePlayerTwoDropdown.getValue().setDouble(1);
@@ -143,12 +145,10 @@ public class SetupController {
         setDoubleForRemainingParticipants(allParticipants);
         createSingleMatches();
         createDoubleMatches();
-        if(isWernerSchefflerSystem()) {
-            createAdditionalWernerSchefflerMatches();
-        }
+//        if (isWernerSchefflerSystem()) {
+//            createAdditionalWernerSchefflerMatches();
+//        }
         initializeNextStage();
-
-
     }
 
     private void createAdditionalWernerSchefflerMatches() {
