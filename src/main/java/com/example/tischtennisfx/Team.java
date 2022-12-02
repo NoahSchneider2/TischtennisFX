@@ -25,4 +25,7 @@ public class Team {
     public void addWonMatch() {
         this.points++;
     }
+    public void subWonMatch() {
+        this.points--;
+    }
 }
