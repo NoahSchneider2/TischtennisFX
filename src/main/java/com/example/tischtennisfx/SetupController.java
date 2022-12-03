@@ -85,6 +85,10 @@ public class SetupController {
     private GridPane rightGrid;
     @FXML
     private Button tunierButton;
+    @FXML
+    private ChoiceBox<?> tunierSystemDropdown;
+    @FXML
+    private GridPane tunierSystemGrid;
 
     @FXML
     private Label doubleLabel;
