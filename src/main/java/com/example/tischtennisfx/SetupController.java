@@ -89,6 +89,8 @@ public class SetupController {
     private ChoiceBox<?> tunierSystemDropdown;
     @FXML
     private GridPane tunierSystemGrid;
+    @FXML
+    private Button setDoubleButton;
 
     @FXML
     private Label doubleLabel;
@@ -104,7 +106,9 @@ public class SetupController {
         leftGrid.setVisible(true);
         rightGrid.setVisible(true);
         doubleLabel.setVisible(true);
-        tunierButton.setVisible(true);
+        setDoubleButton.setVisible(true);
+
+
 
         teamOne = new Team(nameOfTeamOne.getText());
         teamTwo = new Team(nameOfTeamTwo.getText());
@@ -133,6 +137,13 @@ public class SetupController {
         teamTwoPlayerOneDropdown.setItems(t2nOb);
         teamTwoPlayerTwoDropdown.setItems(t2nOb);
     }
+
+    @FXML
+    void setDoubleButton(ActionEvent event) {
+        tunierSystemGrid.setVisible(true);
+        tunierButton.setVisible(true);
+    }
+
     @FXML
 
         void tunierstartButton(ActionEvent event) throws IOException {
