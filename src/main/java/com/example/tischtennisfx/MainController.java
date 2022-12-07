@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class MainController {
 
-    private SpectatorController scoreController;
+    private SpectatorController spectatorController;
 
     private Team teamOne;
 
@@ -28,36 +28,34 @@ public class MainController {
     private Match matchOnRightTable;
 
     @FXML
-    private Label teamOnePlayerNameLeftTable;
+    private Label teamOneNameLeftTable;
 
     @FXML
     private Label pointsTeamOneLeftTable;
 
     @FXML
-    private Label teamTwoPlayerNameLeftTable;
+    private Label teamTwoNameLeftTable;
 
     @FXML
     private Label pointsTeamTwoLeftTable;
+
     @FXML
-    private Label teamOnePlayerNameRightTable;
+    private Label teamOneNameRightTable;
 
     @FXML
     private Label pointsTeamOneRightTable;
 
     @FXML
-    private Label teamTwoPlayerNameRightTable;
+    private Label teamTwoNameRightTable;
 
     @FXML
     private Label pointsTeamTwoRightTable;
 
     @FXML
-    private Label MatchNumberLabelLeft;
+    private Label matchNumberLabelLeft;
 
     @FXML
-    private Label MatchNumberLabelRight;
-
-    public MainController() {
-    }
+    private Label matchNumberLabelRight;
 
     @FXML
     public void initializeController()
@@ -65,6 +63,7 @@ public class MainController {
         ObservableList<Match> matchesForDropdown = FXCollections.observableList(matches);
         this.dropdownMenuLeft.setItems(matchesForDropdown);
         this.dropdownMenuRight.setItems(matchesForDropdown);
+
     }
     public void startMatchForLeftTable(ActionEvent event) {
         Match match = dropdownMenuLeft.getValue();
@@ -78,144 +77,144 @@ public class MainController {
     private void chooseActiveMatch(Match match, String table) {
         if(table == "left"){
             matchOnLeftTable = match;
-            teamOnePlayerNameLeftTable.setText(matchOnLeftTable.getTeamOne().getName());
-            updateScoreLabels();
-            updateLeftSpectatorTeamLabels();
-
+            matchNumberLabelLeft.setText(matchOnLeftTable.toString());
+            updateScore();
+            updateLeftSpectatorLabels();
             return;
         }
         if(table == "right") {
             matchOnRightTable = match;
-            teamOnePlayerNameRightTable.setText(matchOnRightTable.getTeamOne().getName());
-            updateScoreLabels();
-            updateRightSpectatorTeamLabels();
-
+            matchNumberLabelRight.setText(matchOnRightTable.toString());
+            updateScore();
+            updateRightSpectatorLabels();
             return;
         }
-        System.out.println("Fehlerhafte Tischnummer");
+        System.out.println("Fehlerhafte Tischnummer"); //TODO dafür brauch ich noch ein Feld für Infos @Noah
     }
-
+    public void setupMainTeamLabels() {
+        teamOneNameLeftTable.setText(teamOne.getName());
+        teamTwoNameLeftTable.setText(teamTwo.getName());
+        teamOneNameRightTable.setText(teamOne.getName());
+        teamTwoNameRightTable.setText(teamTwo.getName());
+    }
+    @FXML
     public void plusPointTeamOneLeftTable(ActionEvent event) {
         matchOnLeftTable.addPointToTeamOne();
-        updateScoreLabels();
+        if(matchOnLeftTable.isOver()) {
+            matchOnLeftTable.giveWinnerOnePoint();
+        }
+        updateScore();
         }
 
     @FXML
     public void plusPointTeamTwoLeftTable(ActionEvent event) {
         matchOnLeftTable.addPointToTeamTwo();
-        updateScoreLabels();
+        if(matchOnLeftTable.isOver()) {
+            matchOnLeftTable.giveWinnerOnePoint();
+        }
+        updateScore();
     }
+
     @FXML
     public void plusPointTeamOneRightTable(ActionEvent event) {
         matchOnRightTable.addPointToTeamOne();
-        updateScoreLabels();
+        if(matchOnLeftTable.isOver()) {
+            matchOnLeftTable.giveWinnerOnePoint();
+        };
+        updateScore();
     }
 
     @FXML
     public void plusPointTeamTwoRightTable(ActionEvent event) {
         matchOnRightTable.addPointToTeamTwo();
-        updateScoreLabels();
+        if(matchOnLeftTable.isOver()) {
+            matchOnLeftTable.giveWinnerOnePoint();
+        };
+        updateScore();
     }
 
     @FXML
     public void minusPointTeamOneLeftTable(ActionEvent event) {
         matchOnLeftTable.subPointToTeamOne();
-        updateScoreLabels();
+        matchOnLeftTable.setbackWinnerIfNeeded();
+        updateScore();
     }
 
     @FXML
     public void minusPointTeamTwoLeftTable(ActionEvent event) {
         matchOnLeftTable.subPointToTeamTwo();
-        updateScoreLabels();
+        matchOnLeftTable.setbackWinnerIfNeeded();
+        updateScore();
     }
 
     @FXML
     public void minusPointTeamOneRightTable(ActionEvent event) {
         matchOnRightTable.subPointToTeamOne();
-        updateScoreLabels();
-    }
-    public void minusPointTeamTwoRightTable(ActionEvent event) {
-        matchOnRightTable.subPointToTeamTwo();
-        updateScoreLabels();
+        matchOnLeftTable.setbackWinnerIfNeeded();
+        updateScore();
     }
 
     @FXML
-    public void delTable2T2(ActionEvent event) {
+    public void minusPointTeamTwoRightTable(ActionEvent event) {
         matchOnRightTable.subPointToTeamTwo();
-    }
-
-    public Team getTeamOne() {
-        return teamOne;
+        matchOnLeftTable.setbackWinnerIfNeeded();
+        updateScore();
     }
 
     public void setTeamOne(Team teamOne) {
         this.teamOne = teamOne;
     }
 
-    public Team getTeamTwo() {
-        return teamTwo;
-    }
-
     public void setTeamTwo(Team teamTwo) {
         this.teamTwo = teamTwo;
-    }
-
-    public ArrayList<Match> getMatches() {
-        return matches;
     }
 
     public void setMatches(ArrayList<Match> matches) {
         this.matches = matches;
     }
 
-    public void setScoreController(SpectatorController scoreController) {
-        this.scoreController = scoreController;
+    public void setSpectatorController(SpectatorController spectatorController) {
+        this.spectatorController = spectatorController;
     }
 
-    public SpectatorController getScoreController() {
-        return scoreController;
-    }
-    private void updateScoreLabels() {
-        updateMainScoreLabels();
-        updateSpectatorScoreLabels();
-    }
-    private void updateMainScoreLabels() {
+    private void updateScore() {
         if (matchOnLeftTable != null) {
+            spectatorController.getTeamOneTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamOne());
+            spectatorController.getTeamTwoTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamTwo());
             pointsTeamOneLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamOne());
             pointsTeamTwoLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamTwo());
         }
-        if(matchOnRightTable != null) {
+        if (matchOnRightTable != null) {
+            spectatorController.getTeamOneTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamOne());
+            spectatorController.getTeamTwoTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamTwo());
             pointsTeamOneRightTable.setText("" + matchOnRightTable.getPointsOfTeamOne());
             pointsTeamTwoRightTable.setText("" + matchOnRightTable.getPointsOfTeamTwo());
         }
+        spectatorController.getPointsOfTeamOne().setText("" + teamOne.getPoints());
+        spectatorController.getPointsOfTeamTwo().setText("" + teamTwo.getPoints());
     }
-    private void updateSpectatorScoreLabels() {
-        SpectatorController controller = getScoreController();
-        if (matchOnLeftTable != null) {
-            controller.getTeamOneTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamOne());
-            controller.getTeamTwoTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamTwo());
-        }
-        if (matchOnRightTable != null) {
-            controller.getTeamOneTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamOne());
-            controller.getTeamTwoTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamTwo());
-        }
-    }
-    private void updateLeftSpectatorTeamLabels() {
-        SpectatorController controller = getScoreController();
-        controller.getTeamOneTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamOneParticipants.get(0));
-        controller.getTeamTwoTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamTwoParticipants.get(0));
+
+    private void updateLeftSpectatorLabels() {
+        spectatorController.getTeamOneTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamOneParticipants.get(0));
+        spectatorController.getTeamTwoTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamTwoParticipants.get(0));
         if(matchOnLeftTable.isDoubleMatch()) {
-            controller.getTeamOneTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
-            controller.getTeamTwoTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
+            spectatorController.getTeamOneTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
+            spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
+        } else {
+            spectatorController.getTeamOneTableLeftPlayerTwoName().setText("");
+            spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("");
         }
     }
-    private void updateRightSpectatorTeamLabels() {
-        SpectatorController controller = getScoreController();
-        controller.getTeamOneTableRightPlayerOneName().setText("" + matchOnRightTable.teamOneParticipants.get(0));
-        controller.getTeamTwoTableRightPlayerOneName().setText("" + matchOnRightTable.teamTwoParticipants.get(0));
+
+    private void updateRightSpectatorLabels() {
+        spectatorController.getTeamOneTableRightPlayerOneName().setText("" + matchOnRightTable.teamOneParticipants.get(0));
+        spectatorController.getTeamTwoTableRightPlayerOneName().setText("" + matchOnRightTable.teamTwoParticipants.get(0));
         if (matchOnRightTable.isDoubleMatch()) {
-            controller.getTeamOneTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
-            controller.getTeamTwoTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
+            spectatorController.getTeamOneTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
+            spectatorController.getTeamTwoTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
+        } else {
+            spectatorController.getTeamOneTableRightPlayerTwoName().setText("");
+            spectatorController.getTeamTwoTableRightPlayerTwoName().setText("");
         }
     }
 }

@@ -154,7 +154,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="mannschaft1" text="Mannschaft 1" GridPane.halignment="CENTER">
+            <Label fx:id="teamOneLabel" text="Mannschaft 1" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -173,7 +173,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label fx:id="mannschaft2" text="Mannschaft 2" GridPane.halignment="CENTER">
+            <Label fx:id="teamTwoLabel" text="Mannschaft 2" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -199,7 +199,7 @@
             <Insets bottom="10.0" />
          </padding>
       </Label>
-      <Button fx:id="tunierButton" mnemonicParsing="false" onAction="#tunierstartButton" text="Tunier beginnen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+      <Button fx:id="tunierButton" mnemonicParsing="false" onAction="#startTournamentButton" text="Tunier beginnen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="3">
          <font>
             <Font size="18.0" />
          </font>

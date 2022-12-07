@@ -68,17 +68,17 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Label fx:id="teamOnePlayerNameLeftTable" text="Team1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="teamOneNameLeftTable" text="Team1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="teamTwoPlayerNameLeftTable" text="Team2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="teamTwoNameLeftTable" text="Team2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="MatchNumberLabelLeft" text="-" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+            <Label fx:id="matchNumberLabelLeft" text="-" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
                <font>
                   <Font size="36.0" />
                </font>
@@ -131,17 +131,17 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Label fx:id="teamOnePlayerNameRightTable" text="Team1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="teamOneNameRightTable" text="Team1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="teamTwoPlayerNameRightTable" text="Team2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label fx:id="teamTwoNameRightTable" text="Team2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="MatchNumberLabelRight" text="-" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+            <Label fx:id="matchNumberLabelRight" text="-" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
                <font>
                   <Font size="36.0" />
                </font>

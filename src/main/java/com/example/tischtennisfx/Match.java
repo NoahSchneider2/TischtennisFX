@@ -25,6 +25,7 @@ public class Match {
         }
     }
 
+    private Team winner;
     private int matchNumber;
     private boolean doubleMatch = false;
     private int pointsOfTeamOne = 0;
@@ -48,18 +49,26 @@ public class Match {
             setDoubleMatch(true);
         }
     }
-    public void checkIfEnded() {
-        if((pointsOfTeamOne + pointsOfTeamTwo) == 5) {
-            checkWinner();
+    
+    public void setbackWinnerIfNeeded() {
+        if ((pointsOfTeamOne + pointsOfTeamTwo < 5) && winner != null) {
+            winner.subWonMatch();
+            winner = null;
         }
     }
-    private String checkWinner() {
-        if(pointsOfTeamOne == 3) {
-            teamOne.addWonMatch();
-            return teamOne.getName();
+    public boolean isOver() {
+        if((pointsOfTeamOne + pointsOfTeamTwo == 5) && winner == null) {
+            return true;
         }
-            teamTwo.addWonMatch();
-            return teamTwo.getName();
+        return false;
+    }
+    public void giveWinnerOnePoint() {
+        if(pointsOfTeamOne > pointsOfTeamTwo) {
+            winner = teamOne;
+        } else {
+            winner = teamTwo;
+        }
+        winner.addWonMatch();
     }
 
     public boolean isDoubleMatch() {
