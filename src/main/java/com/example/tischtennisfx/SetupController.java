@@ -85,6 +85,12 @@ public class SetupController {
     private GridPane rightGrid;
     @FXML
     private Button tunierButton;
+    @FXML
+    private ChoiceBox<?> tunierSystemDropdown;
+    @FXML
+    private GridPane tunierSystemGrid;
+    @FXML
+    private Button setDoubleButton;
 
     @FXML
     private Label doubleLabel;
@@ -99,7 +105,9 @@ public class SetupController {
         leftGrid.setVisible(true);
         rightGrid.setVisible(true);
         doubleLabel.setVisible(true);
-        tunierButton.setVisible(true);
+        setDoubleButton.setVisible(true);
+
+
 
         teamOne = new Team(nameOfTeamOne.getText());
         teamTwo = new Team(nameOfTeamTwo.getText());
@@ -125,6 +133,13 @@ public class SetupController {
         teamOnePlayerTwoDropdown.setItems(t1nOb);
         teamTwoPlayerOneDropdown.setItems(t2nOb);
         teamTwoPlayerTwoDropdown.setItems(t2nOb);
+    }
+
+
+    @FXML
+    void setDoubleButton(ActionEvent event) {
+        tunierSystemGrid.setVisible(true);
+        tunierButton.setVisible(true);
     }
 
     @FXML
@@ -184,7 +199,7 @@ public class SetupController {
         raiseCounter();
         matches.add(new Match(chooseParticipantsForMatch(1, 2), matchCounter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(2, 1), matchCounter));
+        matches.add(new Match(chooseParticipantsForMatch(3, 4), matchCounter));
         raiseCounter();
         matches.add(new Match(chooseParticipantsForMatch(3, 4), matchCounter));
         raiseCounter();
@@ -206,7 +221,7 @@ public class SetupController {
 
         for (Participant participant :
                 allParticipants) {
-            if (participant.getDouble() == 1) {
+            if(participant.getDouble() == 1) {
                 double1Participants.add(participant);
                 continue;
             }
@@ -231,14 +246,12 @@ public class SetupController {
         }
         throw new RuntimeException();
     }
-
     private ArrayList<Participant> chooseParticipantsForMatch(int positionTeamOne, int positionTeamTwo) {
         ArrayList<Participant> participants = new ArrayList<Participant>();
         participants.add(getParticipantByPosition(participantsOfTeamOne, positionTeamOne));
         participants.add(getParticipantByPosition(participantsOfTeamTwo, positionTeamTwo));
         return participants;
     }
-
     private void initializeNextStage() throws IOException {
         FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("mainWindow.fxml"));
         FXMLLoader fxmlLoader3 = new FXMLLoader(Main.class.getResource("spectatorWindow.fxml"));
