@@ -29,6 +29,7 @@
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -39,39 +40,44 @@
                         <Font size="48.0" />
                     </font>
                 </Label>
-                <Label fx:id="teamOneTableLeftPlayerOneName" text="Spieler1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <Label fx:id="teamOneTableLeftPlayerOneName" text="Spieler1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                     <font>
                         <Font size="36.0" />
                     </font>
                 </Label>
-                <Label fx:id="teamTwoTableLeftPlayerOneName" text="Spieler1" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <Label fx:id="teamTwoTableLeftPlayerOneName" text="Spieler1" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                     <font>
                         <Font size="36.0" />
                     </font>
                 </Label>
-                <Label text="gegen" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <Label text="gegen" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Label>
-                <Label fx:id="teamOneTableLeftPoints" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                <Label fx:id="teamOneTableLeftPoints" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                     <font>
                         <Font name="System Bold" size="48.0" />
                     </font>
                 </Label>
-                <Label fx:id="teamTwoTableLeftPoints" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                <Label fx:id="teamTwoTableLeftPoints" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                     <font>
                         <Font name="System Bold" size="48.0" />
                     </font>
                 </Label>
-            <Label fx:id="teamOneTableLeftPlayerTwoName" text="Spieler2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Label fx:id="teamOneTableLeftPlayerTwoName" text="Spieler2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="teamTwoTableLeftPlayerTwoName" text="Spieler2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Label fx:id="teamTwoTableLeftPlayerTwoName" text="Spieler2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="leftMatchLabel" text="-" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="48.0" />
                </font>
             </Label>
             </children>
@@ -132,6 +138,7 @@
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -142,39 +149,44 @@
                         <Font size="48.0" />
                     </font>
                 </Label>
-                <Label fx:id="teamOneTableRightPlayerOneName" text="Spieler1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <Label fx:id="teamOneTableRightPlayerOneName" text="Spieler1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                     <font>
                         <Font size="36.0" />
                     </font>
                 </Label>
-                <Label fx:id="teamTwoTableRightPlayerOneName" text="Spieler2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <Label fx:id="teamTwoTableRightPlayerOneName" text="Spieler2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                     <font>
                         <Font size="36.0" />
                     </font>
                 </Label>
-                <Label text="gegen" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <Label text="gegen" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Label>
-                <Label fx:id="teamOneTableRightPoints" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                <Label fx:id="teamOneTableRightPoints" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                     <font>
                         <Font name="System Bold" size="48.0" />
                     </font>
                 </Label>
-                <Label fx:id="teamTwoTableRightPoints" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                <Label fx:id="teamTwoTableRightPoints" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                     <font>
                         <Font name="System Bold" size="48.0" />
                     </font>
                 </Label>
-            <Label fx:id="teamOneTableRightPlayerTwoName" text="Spieler2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Label fx:id="teamOneTableRightPlayerTwoName" text="Spieler2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="teamTwoTableRightPlayerTwoName" text="Spieler2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Label fx:id="teamTwoTableRightPlayerTwoName" text="Spieler2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="rightMatchLabel" text="-" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="48.0" />
                </font>
             </Label>
             </children>
