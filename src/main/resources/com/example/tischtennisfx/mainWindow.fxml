@@ -164,7 +164,7 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <ComboBox fx:id="dropdownMenuLeft" prefWidth="150.0" GridPane.rowIndex="1">
+            <ComboBox fx:id="dropdownMenuLeft" prefHeight="40.0" prefWidth="170.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
@@ -193,7 +193,7 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <ComboBox fx:id="dropdownMenuRight" prefWidth="150.0" GridPane.rowIndex="1">
+            <ComboBox fx:id="dropdownMenuRight" prefHeight="40.0" prefWidth="170.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
