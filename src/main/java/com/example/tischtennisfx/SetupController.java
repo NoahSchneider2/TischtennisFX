@@ -145,12 +145,12 @@ public class SetupController {
     @FXML
     void startTournamentButton(ActionEvent event) throws IOException {
         if (!fourDifferentParticipantsSelected()) {
-            if(errorLabel != null) {
+            if (errorLabel != null) {
                 errorLabel.setText("Es wurden nicht 4 verschiedene Spieler für Doppel ausgewählt.");
             }
             return;
         }
-        if(errorLabel != null) {
+        if (errorLabel != null) {
             errorLabel.setText("");
         }
         teamOnePlayerOneDropdown.getValue().setDouble(1);
@@ -180,6 +180,7 @@ public class SetupController {
         raiseCounter();
         matches.add(new Match(chooseParticipantsForMatch(4, 2), matchCounter));
     }
+
     private boolean fourDifferentParticipantsSelected() {
 
         ArrayList<String> participants = new ArrayList<>();
@@ -226,7 +227,7 @@ public class SetupController {
 
         for (Participant participant :
                 allParticipants) {
-            if(participant.getDouble() == 1) {
+            if (participant.getDouble() == 1) {
                 double1Participants.add(participant);
                 continue;
             }
@@ -251,12 +252,14 @@ public class SetupController {
         }
         throw new RuntimeException();
     }
+
     private ArrayList<Participant> chooseParticipantsForMatch(int positionTeamOne, int positionTeamTwo) {
         ArrayList<Participant> participants = new ArrayList<Participant>();
         participants.add(getParticipantByPosition(participantsOfTeamOne, positionTeamOne));
         participants.add(getParticipantByPosition(participantsOfTeamTwo, positionTeamTwo));
         return participants;
     }
+
     private void initializeNextStage() throws IOException {
         FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("mainWindow.fxml"));
         FXMLLoader fxmlLoader3 = new FXMLLoader(Main.class.getResource("spectatorWindow.fxml"));

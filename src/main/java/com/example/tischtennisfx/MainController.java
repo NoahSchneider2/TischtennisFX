@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+
 import java.util.ArrayList;
 
 public class MainController {
@@ -58,31 +59,32 @@ public class MainController {
     private Label matchNumberLabelRight;
 
     @FXML
-    public void initializeController()
-    {
+    public void initializeController() {
         ObservableList<Match> matchesForDropdown = FXCollections.observableList(matches);
         this.dropdownMenuLeft.setItems(matchesForDropdown);
         this.dropdownMenuRight.setItems(matchesForDropdown);
 
     }
+
     public void startMatchForLeftTable(ActionEvent event) {
         Match match = dropdownMenuLeft.getValue();
         chooseActiveMatch(match, "left");
     }
+
     public void startMatchForRightTable(ActionEvent event) {
         Match match = dropdownMenuRight.getValue();
         chooseActiveMatch(match, "right");
     }
-    
+
     private void chooseActiveMatch(Match match, String table) {
-        if(table == "left"){
+        if (table == "left") {
             matchOnLeftTable = match;
             matchNumberLabelLeft.setText(matchOnLeftTable.toString());
             updateScore();
             updateLeftSpectatorLabels();
             return;
         }
-        if(table == "right") {
+        if (table == "right") {
             matchOnRightTable = match;
             matchNumberLabelRight.setText(matchOnRightTable.toString());
             updateScore();
@@ -91,19 +93,21 @@ public class MainController {
         }
         System.out.println("Fehlerhafte Tischnummer"); //TODO dafür brauch ich noch ein Feld für Infos @Noah
     }
+
     public void setupMainTeamLabels() {
         teamOneNameLeftTable.setText(teamOne.getName());
         teamTwoNameLeftTable.setText(teamTwo.getName());
         teamOneNameRightTable.setText(teamOne.getName());
         teamTwoNameRightTable.setText(teamTwo.getName());
     }
+
     @FXML
     public void plusPointTeamOneLeftTable(ActionEvent event) {
-        if(matchOnLeftTable.hasWinner()) {
+        if (matchOnLeftTable.hasWinner()) {
             return;
         }
         matchOnLeftTable.addPointToTeamOne();
-        if(matchOnLeftTable.hasEndScoreReached()) {
+        if (matchOnLeftTable.hasEndScoreReached()) {
             matchOnLeftTable.giveWinnerOnePoint();
         }
         updateScore();
@@ -112,11 +116,11 @@ public class MainController {
     @FXML
     public void plusPointTeamTwoLeftTable(ActionEvent event) {
 
-        if(matchOnLeftTable.hasWinner()) {
+        if (matchOnLeftTable.hasWinner()) {
             return;
         }
         matchOnLeftTable.addPointToTeamTwo();
-        if(matchOnLeftTable.hasEndScoreReached()) {
+        if (matchOnLeftTable.hasEndScoreReached()) {
             matchOnLeftTable.giveWinnerOnePoint();
         }
         updateScore();
@@ -125,11 +129,11 @@ public class MainController {
     @FXML
     public void plusPointTeamOneRightTable(ActionEvent event) {
 
-        if(matchOnRightTable.hasWinner()) {
+        if (matchOnRightTable.hasWinner()) {
             return;
         }
         matchOnRightTable.addPointToTeamOne();
-        if(matchOnRightTable.hasEndScoreReached()) {
+        if (matchOnRightTable.hasEndScoreReached()) {
             matchOnRightTable.giveWinnerOnePoint();
         }
         updateScore();
@@ -138,11 +142,11 @@ public class MainController {
     @FXML
     public void plusPointTeamTwoRightTable(ActionEvent event) {
 
-        if(matchOnRightTable.hasWinner()) {
-           return;
+        if (matchOnRightTable.hasWinner()) {
+            return;
         }
         matchOnRightTable.addPointToTeamTwo();
-        if(matchOnRightTable.hasEndScoreReached()) {
+        if (matchOnRightTable.hasEndScoreReached()) {
             matchOnRightTable.giveWinnerOnePoint();
         }
         updateScore();
@@ -151,7 +155,7 @@ public class MainController {
     @FXML
     public void minusPointTeamOneLeftTable(ActionEvent event) {
         matchOnLeftTable.subPointToTeamOne();
-        if(matchOnLeftTable.isScoreNegative()){
+        if (matchOnLeftTable.isScoreNegative()) {
             matchOnLeftTable.addPointToTeamOne();
         }
         matchOnLeftTable.setbackWinnerIfNeeded();
@@ -161,7 +165,7 @@ public class MainController {
     @FXML
     public void minusPointTeamTwoLeftTable(ActionEvent event) {
         matchOnLeftTable.subPointToTeamTwo();
-        if(matchOnLeftTable.isScoreNegative()){
+        if (matchOnLeftTable.isScoreNegative()) {
             matchOnLeftTable.addPointToTeamTwo();
         }
         matchOnLeftTable.setbackWinnerIfNeeded();
@@ -171,7 +175,7 @@ public class MainController {
     @FXML
     public void minusPointTeamOneRightTable(ActionEvent event) {
         matchOnRightTable.subPointToTeamOne();
-        if(matchOnRightTable.isScoreNegative()){
+        if (matchOnRightTable.isScoreNegative()) {
             matchOnRightTable.addPointToTeamOne();
         }
         matchOnRightTable.setbackWinnerIfNeeded();
@@ -181,7 +185,7 @@ public class MainController {
     @FXML
     public void minusPointTeamTwoRightTable(ActionEvent event) {
         matchOnRightTable.subPointToTeamTwo();
-        if(matchOnRightTable.isScoreNegative()){
+        if (matchOnRightTable.isScoreNegative()) {
             matchOnRightTable.addPointToTeamTwo();
         }
         matchOnRightTable.setbackWinnerIfNeeded();
@@ -224,7 +228,7 @@ public class MainController {
     private void updateLeftSpectatorLabels() {
         spectatorController.getTeamOneTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamOneParticipants.get(0));
         spectatorController.getTeamTwoTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamTwoParticipants.get(0));
-        if(matchOnLeftTable.isDoubleMatch()) {
+        if (matchOnLeftTable.isDoubleMatch()) {
             spectatorController.getTeamOneTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
             spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
         } else {

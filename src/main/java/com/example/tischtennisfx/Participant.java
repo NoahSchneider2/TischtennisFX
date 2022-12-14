@@ -8,6 +8,7 @@ public class Participant {
     private int doubleUnit;
 
     private Team team;
+
     Participant(String spielerName, Team team, int position) {
         setName(spielerName);
         setTeam(team);
@@ -39,11 +40,11 @@ public class Participant {
     }
 
     /**
-     *  Damit werden die Objekte korrekt in den Frontendelementen angezeigt.
-      */
+     * Damit werden die Objekte korrekt in den Frontendelementen angezeigt.
+     */
 
     @Override
-    public String toString()  {
+    public String toString() {
         return getName();
     }
 
