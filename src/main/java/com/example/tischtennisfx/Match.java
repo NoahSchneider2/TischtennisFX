@@ -56,11 +56,14 @@ public class Match {
             winner = null;
         }
     }
-    public boolean isOver() {
-        if((pointsOfTeamOne + pointsOfTeamTwo == 5) && winner == null) {
-            return true;
-        }
-        return false;
+    public boolean hasEndScoreReached() {
+        return pointsOfTeamOne + pointsOfTeamTwo == 5;
+    }
+    public boolean hasWinner() {
+        return winner != null;
+    }
+    public boolean isScoreNegative() {
+        return pointsOfTeamOne < 0 || pointsOfTeamTwo < 0;
     }
     public void giveWinnerOnePoint() {
         if(pointsOfTeamOne > pointsOfTeamTwo) {
