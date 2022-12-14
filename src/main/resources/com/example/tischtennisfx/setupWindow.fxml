@@ -19,7 +19,7 @@
   <rowConstraints>
     <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="160.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="-Infinity" minHeight="1.0" prefHeight="110.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="-Infinity" minHeight="80.0" prefHeight="120.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="80.0" prefHeight="130.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="80.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
@@ -168,8 +168,8 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="teamOnePlayerOneDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="teamOnePlayerTwoDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="teamOnePlayerOneDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="teamOnePlayerTwoDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane fx:id="rightGrid" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -187,8 +187,8 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="teamTwoPlayerOneDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="teamTwoPlayerTwoDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="teamTwoPlayerOneDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="teamTwoPlayerTwoDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
@@ -208,7 +208,7 @@
             <Insets bottom="10.0" />
          </padding>
       </Label>
-      <Button fx:id="tunierButton" mnemonicParsing="false" onAction="#startTournamentButton" text="Tunier beginnen" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+      <Button fx:id="tunierButton" mnemonicParsing="false" onAction="#startTournamentButton" text="Tunier beginnen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <font>
             <Font size="18.0" />
          </font>
@@ -232,7 +232,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="tunierSystemDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="tunierSystemDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <Separator prefWidth="200.0" GridPane.valignment="TOP" />
          </children>
       </GridPane>
