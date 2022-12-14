@@ -218,7 +218,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <GridPane fx:id="tunierSystemGrid" visible="false" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+      <GridPane fx:id="tournamentSystemGrid" visible="false" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -232,7 +232,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="tunierSystemDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="tournamentSystemDropdown" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <Separator prefWidth="200.0" GridPane.valignment="TOP" />
          </children>
       </GridPane>
