@@ -99,17 +99,24 @@ public class MainController {
     }
     @FXML
     public void plusPointTeamOneLeftTable(ActionEvent event) {
+        if(matchOnLeftTable.hasWinner()) {
+            return;
+        }
         matchOnLeftTable.addPointToTeamOne();
-        if(matchOnLeftTable.isOver()) {
+        if(matchOnLeftTable.hasEndScoreReached()) {
             matchOnLeftTable.giveWinnerOnePoint();
         }
         updateScore();
-        }
+    }
 
     @FXML
     public void plusPointTeamTwoLeftTable(ActionEvent event) {
+
+        if(matchOnLeftTable.hasWinner()) {
+            return;
+        }
         matchOnLeftTable.addPointToTeamTwo();
-        if(matchOnLeftTable.isOver()) {
+        if(matchOnLeftTable.hasEndScoreReached()) {
             matchOnLeftTable.giveWinnerOnePoint();
         }
         updateScore();
@@ -117,25 +124,36 @@ public class MainController {
 
     @FXML
     public void plusPointTeamOneRightTable(ActionEvent event) {
+
+        if(matchOnRightTable.hasWinner()) {
+            return;
+        }
         matchOnRightTable.addPointToTeamOne();
-        if(matchOnLeftTable.isOver()) {
-            matchOnLeftTable.giveWinnerOnePoint();
-        };
+        if(matchOnRightTable.hasEndScoreReached()) {
+            matchOnRightTable.giveWinnerOnePoint();
+        }
         updateScore();
     }
 
     @FXML
     public void plusPointTeamTwoRightTable(ActionEvent event) {
+
+        if(matchOnRightTable.hasWinner()) {
+           return;
+        }
         matchOnRightTable.addPointToTeamTwo();
-        if(matchOnLeftTable.isOver()) {
-            matchOnLeftTable.giveWinnerOnePoint();
-        };
+        if(matchOnRightTable.hasEndScoreReached()) {
+            matchOnRightTable.giveWinnerOnePoint();
+        }
         updateScore();
     }
 
     @FXML
     public void minusPointTeamOneLeftTable(ActionEvent event) {
         matchOnLeftTable.subPointToTeamOne();
+        if(matchOnLeftTable.isScoreNegative()){
+            matchOnLeftTable.addPointToTeamOne();
+        }
         matchOnLeftTable.setbackWinnerIfNeeded();
         updateScore();
     }
@@ -143,6 +161,9 @@ public class MainController {
     @FXML
     public void minusPointTeamTwoLeftTable(ActionEvent event) {
         matchOnLeftTable.subPointToTeamTwo();
+        if(matchOnLeftTable.isScoreNegative()){
+            matchOnLeftTable.addPointToTeamTwo();
+        }
         matchOnLeftTable.setbackWinnerIfNeeded();
         updateScore();
     }
@@ -150,14 +171,20 @@ public class MainController {
     @FXML
     public void minusPointTeamOneRightTable(ActionEvent event) {
         matchOnRightTable.subPointToTeamOne();
-        matchOnLeftTable.setbackWinnerIfNeeded();
+        if(matchOnRightTable.isScoreNegative()){
+            matchOnRightTable.addPointToTeamOne();
+        }
+        matchOnRightTable.setbackWinnerIfNeeded();
         updateScore();
     }
 
     @FXML
     public void minusPointTeamTwoRightTable(ActionEvent event) {
         matchOnRightTable.subPointToTeamTwo();
-        matchOnLeftTable.setbackWinnerIfNeeded();
+        if(matchOnRightTable.isScoreNegative()){
+            matchOnRightTable.addPointToTeamTwo();
+        }
+        matchOnRightTable.setbackWinnerIfNeeded();
         updateScore();
     }
 
