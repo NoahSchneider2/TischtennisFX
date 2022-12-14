@@ -68,7 +68,6 @@ public class SetupController {
     private TextField nameOfTeamOne;
     @FXML
     private TextField nameOfTeamTwo;
-    //TODO: Oof, gibts eine Möglichkeit die Felder zu gruppieren? @Noah
     @FXML
     private ChoiceBox<Participant> teamOnePlayerOneDropdown;
 
@@ -86,9 +85,9 @@ public class SetupController {
     @FXML
     private Button tunierButton;
     @FXML
-    private ChoiceBox<?> tunierSystemDropdown;
+    private ChoiceBox<String> tournamentSystemDropdown;
     @FXML
-    private GridPane tunierSystemGrid;
+    private GridPane tournamentSystemGrid;
     @FXML
     private Button setDoubleButton;
 
@@ -106,8 +105,6 @@ public class SetupController {
         rightGrid.setVisible(true);
         doubleLabel.setVisible(true);
         setDoubleButton.setVisible(true);
-
-
 
         teamOne = new Team(nameOfTeamOne.getText());
         teamTwo = new Team(nameOfTeamTwo.getText());
@@ -133,12 +130,15 @@ public class SetupController {
         teamOnePlayerTwoDropdown.setItems(t1nOb);
         teamTwoPlayerOneDropdown.setItems(t2nOb);
         teamTwoPlayerTwoDropdown.setItems(t2nOb);
+
+        ObservableList<String> systems = FXCollections.observableArrayList("Bundessystem", "Werner-Scheffler-System");
+        tournamentSystemDropdown.setItems(systems);
     }
 
 
     @FXML
     void setDoubleButton(ActionEvent event) {
-        tunierSystemGrid.setVisible(true);
+        tournamentSystemGrid.setVisible(true);
         tunierButton.setVisible(true);
     }
 
@@ -160,12 +160,18 @@ public class SetupController {
         setDoubleForRemainingParticipants(allParticipants);
         createSingleMatches();
         createDoubleMatches();
-//        if (isWernerSchefflerSystem()) {
-//            createAdditionalWernerSchefflerMatches();
-//        }
+        if (isWernerSchefflerSystem()) {
+            createAdditionalWernerSchefflerMatches();
+        }
         initializeNextStage();
     }
+
+    private boolean isWernerSchefflerSystem() {
+        return tournamentSystemDropdown.getValue() == "Werner-Scheffler-System";
+    }
+
     private void createAdditionalWernerSchefflerMatches() {
+        raiseCounter();
         matches.add(new Match(chooseParticipantsForMatch(3, 1), matchCounter));
         raiseCounter();
         matches.add(new Match(chooseParticipantsForMatch(1, 3), matchCounter));
@@ -173,7 +179,6 @@ public class SetupController {
         matches.add(new Match(chooseParticipantsForMatch(2, 4), matchCounter));
         raiseCounter();
         matches.add(new Match(chooseParticipantsForMatch(4, 2), matchCounter));
-        raiseCounter();
     }
     private boolean fourDifferentParticipantsSelected() {
 
