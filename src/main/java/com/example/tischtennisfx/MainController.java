@@ -10,6 +10,12 @@ import java.util.ArrayList;
 
 public class MainController {
 
+    @FXML
+    private Label LefMatchEnd;
+
+    @FXML
+    private Label RightMatchEnd;
+
     private SpectatorController spectatorController;
 
     private Team teamOne;

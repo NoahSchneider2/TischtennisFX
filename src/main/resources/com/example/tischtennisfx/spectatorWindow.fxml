@@ -37,7 +37,7 @@
             <children>
                 <Label text="Tisch 1" underline="true" GridPane.columnSpan="3" GridPane.halignment="CENTER">
                     <font>
-                        <Font size="48.0" />
+                        <Font size="72.0" />
                     </font>
                 </Label>
                 <Label fx:id="teamOneTableLeftPlayerOneName" text="Spieler1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
@@ -57,12 +57,12 @@
                 </Label>
                 <Label fx:id="teamOneTableLeftPoints" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                     <font>
-                        <Font name="System Bold" size="48.0" />
+                        <Font name="System Bold" size="96.0" />
                     </font>
                 </Label>
                 <Label fx:id="teamTwoTableLeftPoints" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                     <font>
-                        <Font name="System Bold" size="48.0" />
+                        <Font name="System Bold" size="96.0" />
                     </font>
                 </Label>
             <Label fx:id="teamOneTableLeftPlayerTwoName" text="Spieler2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
@@ -93,12 +93,12 @@
             <children>
                 <Label fx:id="nameOfTeamOne" text="TName1" underline="true" GridPane.halignment="CENTER">
                     <font>
-                        <Font size="64.0" />
+                        <Font size="72.0" />
                     </font>
                 </Label>
                 <Label fx:id="pointsOfTeamOne" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                     <font>
-                        <Font name="System Bold" size="72.0" />
+                        <Font name="System Bold" size="96.0" />
                     </font>
                <GridPane.margin>
                   <Insets bottom="10.0" />
@@ -117,12 +117,12 @@
             <children>
                 <Label fx:id="nameOfTeamTwo" text="TName2" underline="true" GridPane.halignment="CENTER">
                     <font>
-                        <Font size="64.0" />
+                        <Font size="72.0" />
                     </font>
                 </Label>
                 <Label fx:id="pointsOfTeamTwo" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                     <font>
-                        <Font name="System Bold" size="72.0" />
+                        <Font name="System Bold" size="96.0" />
                     </font>
                <GridPane.margin>
                   <Insets bottom="10.0" />
@@ -146,7 +146,7 @@
             <children>
                 <Label text="Tisch 2" underline="true" GridPane.columnSpan="3" GridPane.halignment="CENTER">
                     <font>
-                        <Font size="48.0" />
+                        <Font size="72.0" />
                     </font>
                 </Label>
                 <Label fx:id="teamOneTableRightPlayerOneName" text="Spieler1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
@@ -166,12 +166,12 @@
                 </Label>
                 <Label fx:id="teamOneTableRightPoints" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                     <font>
-                        <Font name="System Bold" size="48.0" />
+                        <Font name="System Bold" size="96.0" />
                     </font>
                 </Label>
                 <Label fx:id="teamTwoTableRightPoints" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                     <font>
-                        <Font name="System Bold" size="48.0" />
+                        <Font name="System Bold" size="96.0" />
                     </font>
                 </Label>
             <Label fx:id="teamOneTableRightPlayerTwoName" text="Spieler2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
