@@ -13,16 +13,16 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tischtennisfx.SetupController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="960.0" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="160.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="50.0" prefHeight="160.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="-Infinity" minHeight="1.0" prefHeight="110.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="-Infinity" minHeight="80.0" prefHeight="130.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="80.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="80.0" prefHeight="130.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="50.0" prefHeight="80.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
@@ -44,47 +44,47 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <TextField fx:id="nameOfTeamOne" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
+            <TextField fx:id="nameOfTeamOne" minHeight="-Infinity" prefHeight="70.0" promptText="Mannschaft 1" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
                <GridPane.margin>
                   <Insets right="10.0" top="2.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
                <opaqueInsets>
                   <Insets top="10.0" />
                </opaqueInsets>
             </TextField>
-            <TextField fx:id="nameOfParticipant1" promptText="Spieler 1" GridPane.rowIndex="2">
+            <TextField fx:id="nameOfParticipant1" minHeight="-Infinity" prefHeight="70.0" promptText="Spieler 1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
             </TextField>
-            <TextField fx:id="nameOfParticipant2" promptText="Spieler 2" GridPane.rowIndex="4">
+            <TextField fx:id="nameOfParticipant2" minHeight="-Infinity" prefHeight="70.0" promptText="Spieler 2" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
             </TextField>
-            <TextField fx:id="nameOfParticipant3" promptText="Spieler 3" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="nameOfParticipant3" minHeight="-Infinity" prefHeight="70.0" promptText="Spieler 3" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
             </TextField>
-            <TextField fx:id="nameOfParticipant4" promptText="Spieler 4" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="nameOfParticipant4" minHeight="-Infinity" prefHeight="70.0" promptText="Spieler 4" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
             </TextField>
          </children>
@@ -108,47 +108,47 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <TextField fx:id="nameOfTeamTwo" GridPane.columnIndex="2" GridPane.valignment="BASELINE">
+            <TextField fx:id="nameOfTeamTwo" minHeight="-Infinity" prefHeight="70.0" promptText="Mannschaft 2" GridPane.columnIndex="2" GridPane.valignment="BASELINE">
                <GridPane.margin>
                   <Insets right="10.0" top="2.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
                <opaqueInsets>
                   <Insets top="10.0" />
                </opaqueInsets>
             </TextField>
-            <TextField fx:id="nameOfParticipant5" promptText="Spieler 1" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="nameOfParticipant5" minHeight="-Infinity" prefHeight="70.0" promptText="Spieler 1" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
             </TextField>
-            <TextField fx:id="nameOfParticipant6" promptText="Spieler 2" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="nameOfParticipant6" minHeight="-Infinity" prefHeight="70.0" promptText="Spieler 2" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
             </TextField>
-            <TextField fx:id="nameOfParticipant7" promptText="Spieler 3" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <TextField fx:id="nameOfParticipant7" minHeight="-Infinity" prefHeight="70.0" promptText="Spieler 3" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
             </TextField>
-            <TextField fx:id="nameOfParticipant8" promptText="Spieler 4" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <TextField fx:id="nameOfParticipant8" minHeight="-Infinity" prefHeight="70.0" promptText="Spieler 4" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
                <font>
-                  <Font size="18.0" />
+                  <Font size="30.0" />
                </font>
             </TextField>
          </children>
@@ -165,11 +165,11 @@
          <children>
             <Label fx:id="teamOneLabel" text="Mannschaft 1" GridPane.halignment="CENTER">
                <font>
-                  <Font size="24.0" />
+                  <Font size="30.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="teamOnePlayerOneDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="teamOnePlayerTwoDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="teamOnePlayerOneDropdown" prefHeight="70.0" prefWidth="300.0" style="-fx-font-size: 25;" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="teamOnePlayerTwoDropdown" prefHeight="70.0" prefWidth="300.0" style="-fx-font-size: 25;" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane fx:id="rightGrid" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -184,38 +184,41 @@
          <children>
             <Label fx:id="teamTwoLabel" text="Mannschaft 2" GridPane.halignment="CENTER">
                <font>
-                  <Font size="24.0" />
+                  <Font size="30.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="teamTwoPlayerOneDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="teamTwoPlayerTwoDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="teamTwoPlayerOneDropdown" prefHeight="70.0" prefWidth="300.0" style="-fx-font-size: 25;" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="teamTwoPlayerTwoDropdown" prefHeight="70.0" prefWidth="300.0" style="-fx-font-size: 25;" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <Button fx:id="doubleButton" mnemonicParsing="false" onAction="#doubleButton" text="Mannschaften bestätigen" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <GridPane.margin>
-            <Insets bottom="5.0" right="10.0" top="10.0" />
-         </GridPane.margin>
-      </Button>
-      <Label fx:id="doubleLabel" text="Erstes Doppel auswählen:" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <padding>
+            <Insets top="20.0" />
+         </padding></Separator>
+      <Button fx:id="doubleButton" mnemonicParsing="false" onAction="#doubleButton" prefHeight="70.0" prefWidth="300.0" text="Mannschaften bestätigen" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" right="10.0" top="30.0" />
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="doubleLabel" text="Erstes Doppel auswählen:" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+         <font>
+            <Font size="36.0" />
          </font>
          <padding>
             <Insets bottom="10.0" />
          </padding>
       </Label>
-      <Button fx:id="tunierButton" mnemonicParsing="false" onAction="#startTournamentButton" text="Tunier beginnen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+      <Button fx:id="tunierButton" mnemonicParsing="false" onAction="#startTournamentButton" prefHeight="70.0" prefWidth="300.0" text="Tunier beginnen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="setDoubleButton" mnemonicParsing="false" onAction="#setDoubleButton" text="Doppel bestätigen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+      <Button fx:id="setDoubleButton" mnemonicParsing="false" onAction="#setDoubleButton" prefHeight="70.0" prefWidth="300.0" text="Doppel bestätigen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="3">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Button>
       <GridPane fx:id="tournamentSystemGrid" visible="false" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
@@ -229,16 +232,18 @@
          <children>
             <Label text="Tuniersystem auswählen:" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="tournamentSystemDropdown" prefHeight="90.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+ 
+            <ChoiceBox fx:id="tunierSystemDropdown" prefHeight="70.0" prefWidth="300.0" style="-fx-font-size: 25;" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+
             <Separator prefWidth="200.0" GridPane.valignment="TOP" />
          </children>
       </GridPane>
       <Label fx:id="errorLabel" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="6">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="37.0" />
          </font>
       </Label>
    </children>
