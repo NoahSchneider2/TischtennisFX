@@ -14,10 +14,10 @@ public class Match {
     private void setTeamsFromParticipants(ArrayList<Participant> participants) {
         for (Participant participant :
                 participants) {
-            if(teamOne == participant.getTeam() || teamTwo == participant.getTeam()) {
+            if (teamOne == participant.getTeam() || teamTwo == participant.getTeam()) {
                 continue;
             }
-            if(teamOne != null) {
+            if (teamOne != null) {
                 setTeamTwo(participant.getTeam());
                 continue;
             }
@@ -34,9 +34,10 @@ public class Match {
     private Team teamTwo;
     public ArrayList<Participant> teamOneParticipants = new ArrayList<Participant>(); //TODO: Mal schauen wie wir das im Frontend ausgeben
     public ArrayList<Participant> teamTwoParticipants = new ArrayList<Participant>(); //TODO: Mal schauen wie wir das im Frontend ausgeben
+
     private void partParticipantsByTeam(ArrayList<Participant> participants) {
-        for (Participant participant: participants) {
-            if(participant.getTeam().getName() == teamOne.getName()) {
+        for (Participant participant : participants) {
+            if (participant.getTeam().getName() == teamOne.getName()) {
                 teamOneParticipants.add(participant);
             } else {
                 teamTwoParticipants.add(participant);
@@ -45,25 +46,32 @@ public class Match {
     }
 
     private void checkIfDoubleMatch(ArrayList<Participant> spielerListe) {
-        if(spielerListe.size() == 4) {
+        if (spielerListe.size() == 4) {
             setDoubleMatch(true);
         }
     }
-    
+
     public void setbackWinnerIfNeeded() {
         if ((pointsOfTeamOne + pointsOfTeamTwo < 5) && winner != null) {
             winner.subWonMatch();
             winner = null;
         }
     }
-    public boolean isOver() {
-        if((pointsOfTeamOne + pointsOfTeamTwo == 5) && winner == null) {
-            return true;
-        }
-        return false;
+
+    public boolean hasEndScoreReached() {
+        return pointsOfTeamOne + pointsOfTeamTwo == 5;
     }
+
+    public boolean hasWinner() {
+        return winner != null;
+    }
+
+    public boolean isScoreNegative() {
+        return pointsOfTeamOne < 0 || pointsOfTeamTwo < 0;
+    }
+
     public void giveWinnerOnePoint() {
-        if(pointsOfTeamOne > pointsOfTeamTwo) {
+        if (pointsOfTeamOne > pointsOfTeamTwo) {
             winner = teamOne;
         } else {
             winner = teamTwo;
@@ -90,6 +98,7 @@ public class Match {
     public void addPointToTeamOne() {
         pointsOfTeamOne++;
     }
+
     public void subPointToTeamOne() {
         pointsOfTeamOne--;
     }
@@ -97,6 +106,7 @@ public class Match {
     public void addPointToTeamTwo() {
         pointsOfTeamTwo++;
     }
+
     public void subPointToTeamTwo() {
         pointsOfTeamTwo--;
     }
@@ -125,8 +135,9 @@ public class Match {
     public void setMatchNumber(int matchNumber) {
         this.matchNumber = matchNumber;
     }
+
     @Override
-    public String toString()  {
+    public String toString() {
         return "Match Nr. " + getMatchNumber();
     }
 }
