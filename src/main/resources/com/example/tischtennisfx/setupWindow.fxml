@@ -211,7 +211,7 @@
             <Insets bottom="10.0" />
          </padding>
       </Label>
-      <Button fx:id="tunierButton" mnemonicParsing="false" onAction="#startTournamentButton" prefHeight="70.0" prefWidth="300.0" text="Tunier beginnen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+      <Button fx:id="tournamentButton" mnemonicParsing="false" onAction="#startTournamentButton" prefHeight="70.0" prefWidth="300.0" text="Tunier beginnen" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <font>
             <Font size="24.0" />
          </font>
@@ -236,7 +236,7 @@
                </font>
             </Label>
  
-            <ChoiceBox fx:id="tunierSystemDropdown" prefHeight="70.0" prefWidth="300.0" style="-fx-font-size: 25;" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="tournamentSystemDropdown" prefHeight="70.0" prefWidth="300.0" style="-fx-font-size: 25;" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
 
             <Separator prefWidth="200.0" GridPane.valignment="TOP" />
          </children>

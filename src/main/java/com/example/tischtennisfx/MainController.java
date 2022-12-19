@@ -12,10 +12,10 @@ import java.util.ArrayList;
 public class MainController {
 
     @FXML
-    private Label LefMatchEnd;
+    private Label leftMatchEnd;
 
     @FXML
-    private Label RightMatchEnd;
+    private Label rightMatchEnd;
 
     private SpectatorController spectatorController;
 
@@ -115,6 +115,7 @@ public class MainController {
         matchOnLeftTable.addPointToTeamOne();
         if (matchOnLeftTable.hasEndScoreReached()) {
             matchOnLeftTable.giveWinnerOnePoint();
+            leftMatchEnd.setText("Match beendet");
         }
         updateScore();
     }
@@ -128,6 +129,7 @@ public class MainController {
         matchOnLeftTable.addPointToTeamTwo();
         if (matchOnLeftTable.hasEndScoreReached()) {
             matchOnLeftTable.giveWinnerOnePoint();
+            leftMatchEnd.setText("Match beendet");
         }
         updateScore();
     }
@@ -141,6 +143,7 @@ public class MainController {
         matchOnRightTable.addPointToTeamOne();
         if (matchOnRightTable.hasEndScoreReached()) {
             matchOnRightTable.giveWinnerOnePoint();
+            rightMatchEnd.setText("Match beendet");
         }
         updateScore();
     }
@@ -154,6 +157,7 @@ public class MainController {
         matchOnRightTable.addPointToTeamTwo();
         if (matchOnRightTable.hasEndScoreReached()) {
             matchOnRightTable.giveWinnerOnePoint();
+            rightMatchEnd.setText("Match beendet");
         }
         updateScore();
     }
@@ -164,6 +168,7 @@ public class MainController {
         if (matchOnLeftTable.isScoreNegative()) {
             matchOnLeftTable.addPointToTeamOne();
         }
+        leftMatchEnd.setText("");
         matchOnLeftTable.setbackWinnerIfNeeded();
         updateScore();
     }
@@ -174,6 +179,7 @@ public class MainController {
         if (matchOnLeftTable.isScoreNegative()) {
             matchOnLeftTable.addPointToTeamTwo();
         }
+        leftMatchEnd.setText("");
         matchOnLeftTable.setbackWinnerIfNeeded();
         updateScore();
     }
@@ -185,6 +191,7 @@ public class MainController {
             matchOnRightTable.addPointToTeamOne();
         }
         matchOnRightTable.setbackWinnerIfNeeded();
+        rightMatchEnd.setText("");
         updateScore();
     }
 
@@ -195,6 +202,7 @@ public class MainController {
             matchOnRightTable.addPointToTeamTwo();
         }
         matchOnRightTable.setbackWinnerIfNeeded();
+        rightMatchEnd.setText("");
         updateScore();
     }
 
@@ -220,12 +228,22 @@ public class MainController {
             spectatorController.getTeamTwoTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamTwo());
             pointsTeamOneLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamOne());
             pointsTeamTwoLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamTwo());
+            if(matchOnLeftTable.hasWinner()){
+                leftMatchEnd.setText("Match ist beendet");
+            } else {
+                leftMatchEnd.setText("");
+            }
         }
         if (matchOnRightTable != null) {
             spectatorController.getTeamOneTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamOne());
             spectatorController.getTeamTwoTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamTwo());
             pointsTeamOneRightTable.setText("" + matchOnRightTable.getPointsOfTeamOne());
             pointsTeamTwoRightTable.setText("" + matchOnRightTable.getPointsOfTeamTwo());
+            if(matchOnRightTable.hasWinner()){
+                rightMatchEnd.setText("Match ist beendet");
+            } else {
+                rightMatchEnd.setText("");
+            }
         }
         spectatorController.getPointsOfTeamOne().setText("" + teamOne.getPoints());
         spectatorController.getPointsOfTeamTwo().setText("" + teamTwo.getPoints());
