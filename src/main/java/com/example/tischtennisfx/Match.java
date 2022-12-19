@@ -35,6 +35,10 @@ public class Match {
     public ArrayList<Participant> teamOneParticipants = new ArrayList<Participant>(); //TODO: Mal schauen wie wir das im Frontend ausgeben
     public ArrayList<Participant> teamTwoParticipants = new ArrayList<Participant>(); //TODO: Mal schauen wie wir das im Frontend ausgeben
 
+    public Team getWinner() {
+        return winner;
+    }
+
     private void partParticipantsByTeam(ArrayList<Participant> participants) {
         for (Participant participant : participants) {
             if (participant.getTeam().getName() == teamOne.getName()) {

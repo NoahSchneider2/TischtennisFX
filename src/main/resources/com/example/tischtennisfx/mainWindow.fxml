@@ -84,7 +84,7 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <Label fx:id="LefMatchEnd" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+            <Label fx:id="leftMatchEnd" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
                <font>
                   <Font size="64.0" />
                </font>
@@ -153,7 +153,7 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <Label fx:id="RightMatchEnd" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+            <Label fx:id="rightMatchEnd" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
                <font>
                   <Font size="64.0" />
                </font>
