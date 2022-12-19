@@ -83,7 +83,7 @@ public class SetupController {
     @FXML
     private GridPane rightGrid;
     @FXML
-    private Button tunierButton;
+    private Button tournamentButton;
     @FXML
     private ChoiceBox<String> tournamentSystemDropdown;
     @FXML
@@ -139,7 +139,7 @@ public class SetupController {
     @FXML
     void setDoubleButton(ActionEvent event) {
         tournamentSystemGrid.setVisible(true);
-        tunierButton.setVisible(true);
+        tournamentButton.setVisible(true);
     }
 
     @FXML
