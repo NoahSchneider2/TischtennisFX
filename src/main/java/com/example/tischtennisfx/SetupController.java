@@ -281,6 +281,7 @@ public class SetupController {
 
         SpectatorController scoreController = (SpectatorController) fxmlLoader3.getController();
         mainController.setSpectatorController(scoreController);
+        mainController.setWernerScheffler(isWernerSchefflerSystem());
         scoreController.getNameOfTeamOne().setText(teamOne.getName());
         scoreController.getNameOfTeamTwo().setText(teamTwo.getName());
 
