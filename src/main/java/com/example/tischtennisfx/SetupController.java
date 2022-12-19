@@ -205,7 +205,7 @@ public class SetupController {
         raiseCounter();
         matches.add(new Match(chooseParticipantsForMatch(1, 2), matchCounter));
         raiseCounter();
-        matches.add(new Match(chooseParticipantsForMatch(3, 4), matchCounter));
+        matches.add(new Match(chooseParticipantsForMatch(2, 1), matchCounter));
         raiseCounter();
         matches.add(new Match(chooseParticipantsForMatch(3, 4), matchCounter));
         raiseCounter();
