@@ -49,8 +49,8 @@ public class Match {
         }
     }
 
-    private void checkIfDoubleMatch(ArrayList<Participant> spielerListe) {
-        if (spielerListe.size() == 4) {
+    private void checkIfDoubleMatch(ArrayList<Participant> participantList) {
+        if (participantList.size() == 4) {
             setDoubleMatch(true);
         }
     }

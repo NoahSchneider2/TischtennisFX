@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class MainController {
 
+    private boolean isWernerScheffler = false;
     @FXML
     private Label leftMatchEnd;
 
@@ -247,6 +248,10 @@ public class MainController {
         }
         spectatorController.getPointsOfTeamOne().setText("" + teamOne.getPoints());
         spectatorController.getPointsOfTeamTwo().setText("" + teamTwo.getPoints());
+        if (endOfWernerScheffler()) {
+            leftMatchEnd.setText("Team " + getWinningTeamName() + " hat ");
+            rightMatchEnd.setText("das Spiel gewonnen!!");
+        }
     }
 
     private void updateLeftSpectatorLabels() {
@@ -273,6 +278,27 @@ public class MainController {
             spectatorController.getTeamOneTableRightPlayerTwoName().setText("");
             spectatorController.getTeamTwoTableRightPlayerTwoName().setText("");
         }
+    }
+    private boolean endOfWernerScheffler() {
+        return (teamOne.getPoints() == 8 || teamTwo.getPoints() == 8) && isWernerScheffler();
+    }
+
+    private String getWinningTeamName() {
+        if(teamOne.getPoints() == teamTwo.getPoints()){
+            return "";
+        }
+        if(teamOne.getPoints() > teamTwo.getPoints()) {
+            return teamOne.getName();
+        }
+        return teamTwo.getName();
+    }
+
+    public boolean isWernerScheffler() {
+        return isWernerScheffler;
+    }
+
+    public void setWernerScheffler(boolean wernerScheffler) {
+        isWernerScheffler = wernerScheffler;
     }
 }
 
