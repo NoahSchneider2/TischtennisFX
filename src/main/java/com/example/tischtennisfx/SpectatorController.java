@@ -120,4 +120,12 @@ public class SpectatorController {
     public Label getTeamTwoTableRightPoints() {
         return teamTwoTableRightPoints;
     }
+
+    public Label getLeftMatchLabel() {
+        return leftMatchLabel;
+    }
+
+    public Label getRightMatchLabel() {
+        return rightMatchLabel;
+    }
 }
