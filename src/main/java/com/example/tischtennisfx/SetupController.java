@@ -158,8 +158,8 @@ public class SetupController {
         teamTwoPlayerOneDropdown.getValue().setDouble(1);
         teamTwoPlayerTwoDropdown.getValue().setDouble(1);
         setDoubleForRemainingParticipants(allParticipants);
-        createSingleMatches();
         createDoubleMatches();
+        createSingleMatches();
         if (isWernerSchefflerSystem()) {
             createAdditionalWernerSchefflerMatches();
         }

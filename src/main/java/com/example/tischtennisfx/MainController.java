@@ -250,11 +250,12 @@ public class MainController {
     }
 
     private void updateLeftSpectatorLabels() {
+        spectatorController.getLeftMatchLabel().setText(matchOnLeftTable.toString());
         spectatorController.getTeamOneTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamOneParticipants.get(0));
         spectatorController.getTeamTwoTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamTwoParticipants.get(0));
         if (matchOnLeftTable.isDoubleMatch()) {
             spectatorController.getTeamOneTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
-            spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
+            spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamTwoParticipants.get(1));
         } else {
             spectatorController.getTeamOneTableLeftPlayerTwoName().setText("");
             spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("");
@@ -262,11 +263,12 @@ public class MainController {
     }
 
     private void updateRightSpectatorLabels() {
+        spectatorController.getRightMatchLabel().setText(matchOnRightTable.toString());
         spectatorController.getTeamOneTableRightPlayerOneName().setText("" + matchOnRightTable.teamOneParticipants.get(0));
         spectatorController.getTeamTwoTableRightPlayerOneName().setText("" + matchOnRightTable.teamTwoParticipants.get(0));
         if (matchOnRightTable.isDoubleMatch()) {
             spectatorController.getTeamOneTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
-            spectatorController.getTeamTwoTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
+            spectatorController.getTeamTwoTableRightPlayerTwoName().setText("" + matchOnRightTable.teamTwoParticipants.get(1));
         } else {
             spectatorController.getTeamOneTableRightPlayerTwoName().setText("");
             spectatorController.getTeamTwoTableRightPlayerTwoName().setText("");
