@@ -14,7 +14,7 @@ public class Main extends Application {
 
         Scene scene1 = new Scene(fxmlLoader1.load(), 620, 420);
         stage.setTitle("Tabletennisturnier - Mannschaftseingabe");
-        SetupController setupController = (SetupController) fxmlLoader1.getController();
+        SetupController setupController = fxmlLoader1.getController();
         setupController.setStageOne(stage);
         stage.setScene(scene1);
         stage.show();
