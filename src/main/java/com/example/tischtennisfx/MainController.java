@@ -225,10 +225,10 @@ public class MainController {
 
     private void updateScore() {
         if (matchOnLeftTable != null) {
-            spectatorController.getTeamOneTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamOne());
-            spectatorController.getTeamTwoTableLeftPoints().setText("" + matchOnLeftTable.getPointsOfTeamTwo());
-            pointsTeamOneLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamOne());
-            pointsTeamTwoLeftTable.setText("" + matchOnLeftTable.getPointsOfTeamTwo());
+            spectatorController.getTeamOneTableLeftPoints().setText(String.valueOf(matchOnLeftTable.getPointsOfTeamOne()));
+            spectatorController.getTeamTwoTableLeftPoints().setText(String.valueOf(matchOnLeftTable.getPointsOfTeamTwo()));
+            pointsTeamOneLeftTable.setText(String.valueOf(matchOnLeftTable.getPointsOfTeamOne()));
+            pointsTeamTwoLeftTable.setText(String.valueOf(matchOnLeftTable.getPointsOfTeamTwo()));
             if(matchOnLeftTable.hasWinner()){
                 leftMatchEnd.setText("Match ist beendet");
             } else {
@@ -236,18 +236,18 @@ public class MainController {
             }
         }
         if (matchOnRightTable != null) {
-            spectatorController.getTeamOneTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamOne());
-            spectatorController.getTeamTwoTableRightPoints().setText("" + matchOnRightTable.getPointsOfTeamTwo());
-            pointsTeamOneRightTable.setText("" + matchOnRightTable.getPointsOfTeamOne());
-            pointsTeamTwoRightTable.setText("" + matchOnRightTable.getPointsOfTeamTwo());
+            spectatorController.getTeamOneTableRightPoints().setText(String.valueOf(matchOnRightTable.getPointsOfTeamOne()));
+            spectatorController.getTeamTwoTableRightPoints().setText(String.valueOf(matchOnRightTable.getPointsOfTeamTwo()));
+            pointsTeamOneRightTable.setText(String.valueOf(matchOnRightTable.getPointsOfTeamOne()));
+            pointsTeamTwoRightTable.setText(String.valueOf(matchOnRightTable.getPointsOfTeamTwo()));
             if(matchOnRightTable.hasWinner()){
                 rightMatchEnd.setText("Match ist beendet");
             } else {
                 rightMatchEnd.setText("");
             }
         }
-        spectatorController.getPointsOfTeamOne().setText("" + teamOne.getPoints());
-        spectatorController.getPointsOfTeamTwo().setText("" + teamTwo.getPoints());
+        spectatorController.getPointsOfTeamOne().setText(String.valueOf(teamOne.getPoints()));
+        spectatorController.getPointsOfTeamTwo().setText(String.valueOf(teamTwo.getPoints()));
         if (endOfWernerScheffler()) {
             leftMatchEnd.setText("Team " + getWinningTeamName() + " hat ");
             rightMatchEnd.setText("das Spiel gewonnen!!");
@@ -256,11 +256,11 @@ public class MainController {
 
     private void updateLeftSpectatorLabels() {
         spectatorController.getLeftMatchLabel().setText(matchOnLeftTable.toString());
-        spectatorController.getTeamOneTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamOneParticipants.get(0));
-        spectatorController.getTeamTwoTableLeftPlayerOneName().setText("" + matchOnLeftTable.teamTwoParticipants.get(0));
+        spectatorController.getTeamOneTableLeftPlayerOneName().setText(String.valueOf(matchOnLeftTable.teamOneParticipants.get(0)));
+        spectatorController.getTeamTwoTableLeftPlayerOneName().setText(String.valueOf(matchOnLeftTable.teamTwoParticipants.get(0)));
         if (matchOnLeftTable.isDoubleMatch()) {
-            spectatorController.getTeamOneTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamOneParticipants.get(1));
-            spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("" + matchOnLeftTable.teamTwoParticipants.get(1));
+            spectatorController.getTeamOneTableLeftPlayerTwoName().setText(String.valueOf(matchOnLeftTable.teamOneParticipants.get(1)));
+            spectatorController.getTeamTwoTableLeftPlayerTwoName().setText(String.valueOf(matchOnLeftTable.teamTwoParticipants.get(1)));
         } else {
             spectatorController.getTeamOneTableLeftPlayerTwoName().setText("");
             spectatorController.getTeamTwoTableLeftPlayerTwoName().setText("");
@@ -269,11 +269,11 @@ public class MainController {
 
     private void updateRightSpectatorLabels() {
         spectatorController.getRightMatchLabel().setText(matchOnRightTable.toString());
-        spectatorController.getTeamOneTableRightPlayerOneName().setText("" + matchOnRightTable.teamOneParticipants.get(0));
-        spectatorController.getTeamTwoTableRightPlayerOneName().setText("" + matchOnRightTable.teamTwoParticipants.get(0));
+        spectatorController.getTeamOneTableRightPlayerOneName().setText(String.valueOf(matchOnRightTable.teamOneParticipants.get(0)));
+        spectatorController.getTeamTwoTableRightPlayerOneName().setText(String.valueOf(matchOnRightTable.teamTwoParticipants.get(0)));
         if (matchOnRightTable.isDoubleMatch()) {
-            spectatorController.getTeamOneTableRightPlayerTwoName().setText("" + matchOnRightTable.teamOneParticipants.get(1));
-            spectatorController.getTeamTwoTableRightPlayerTwoName().setText("" + matchOnRightTable.teamTwoParticipants.get(1));
+            spectatorController.getTeamOneTableRightPlayerTwoName().setText(String.valueOf(matchOnRightTable.teamOneParticipants.get(1)));
+            spectatorController.getTeamTwoTableRightPlayerTwoName().setText(String.valueOf(matchOnRightTable.teamTwoParticipants.get(1)));
         } else {
             spectatorController.getTeamOneTableRightPlayerTwoName().setText("");
             spectatorController.getTeamTwoTableRightPlayerTwoName().setText("");
