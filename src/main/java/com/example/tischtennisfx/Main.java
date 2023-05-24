@@ -1,5 +1,6 @@
 package com.example.tischtennisfx;
 
+import com.example.tischtennisfx.controller.SetupController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,7 +19,6 @@ public class Main extends Application {
         setupController.setStageOne(stage);
         stage.setScene(scene1);
         stage.show();
-
     }
 
     public static void main(String[] args) {

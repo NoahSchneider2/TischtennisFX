@@ -1,4 +1,4 @@
-package com.example.tischtennisfx;
+package com.example.tischtennisfx.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
